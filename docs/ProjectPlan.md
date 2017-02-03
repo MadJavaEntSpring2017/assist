@@ -19,65 +19,65 @@
 
 ### Week 3
  - [X] Time log
- - [] Add necessary unit tests
+ - [X] Add necessary unit tests
  - [X] Add Hibernate
- - [] Connect MySQL database to IntelliJ, perform initial queries
- - [] Implement a DAO
+ - [X] Connect MySQL database to IntelliJ, perform initial queries
+ - [X] Implement a DAO
 
 ### Week 4
- - [] Time log
- - [] Add necessary unit tests
- - [] Add project to AWS
- - [] Finish data model
- - [] Create additional DAOs
+ - [ ] Time log
+ - [ ] Add necessary unit tests
+ - [ ] Add project to AWS
+ - [ ] Finish data model
+ - [ ] Create additional DAOs
 
 ### Week 5
- - [] Time log
- - [] Add necessary unit tests
- - [] Add authorization, authentication
- - [] Add Bower
- - [] Add AngularJS
- - [] Add additional frontend utilities
+ - [ ] Time log
+ - [ ] Add necessary unit tests
+ - [ ] Add authorization, authentication
+ - [ ] Add Bower
+ - [ ] Add AngularJS
+ - [ ] Add additional frontend utilities
 
 ### Week 6
- - [] Time log
- - [] Add necessary unit tests
- - [] Implement repositories
- - [] Plan out necessary services
+ - [ ] Time log
+ - [ ] Add necessary unit tests
+ - [ ] Implement repositories
+ - [ ] Plan out necessary services
 
 ### Week 7
- - [] Time log
- - [] Add necessary unit tests
- - [] Implement RESTful services
+ - [ ] Time log
+ - [ ] Add necessary unit tests
+ - [ ] Implement RESTful services
 
 ### Week 8
- - [] Time log
- - [] Add necessary unit tests
+ - [ ] Time log
+ - [ ] Add necessary unit tests
 
 ### Week 9
- - [] Time log
- - [] Add necessary unit tests
+ - [ ] Time log
+ - [ ] Add necessary unit tests
 
 ### Week 10
- - [] Time log
- - [] Add necessary unit tests
+ - [ ] Time log
+ - [ ] Add necessary unit tests
 
 ### Week 11
- - [] Time log
- - [] Add necessary unit tests
+ - [ ] Time log
+ - [ ] Add necessary unit tests
 
 ### Week 12
- - [] Time log
- - [] Add necessary unit tests
+ - [ ] Time log
+ - [ ] Add necessary unit tests
 
 ### Week 13
- - [] Time log 
- - [] Add necessary unit tests
+ - [ ] Time log 
+ - [ ] Add necessary unit tests
 
 ### Week 14
- - [] Time log
- - [] Add necessary unit tests
+ - [ ] Time log
+ - [ ] Add necessary unit tests
 
 ### Week 15
- - [] Time log
- - [] Add necessary unit tests
+ - [ ] Time log
+ - [ ] Add necessary unit tests

@@ -34,3 +34,5 @@
 | 20170201 | Finish Exercise 3 | 1.5 | |
 | 20170201 | Feedback to presenter | 0.25 | |
 | 20170201 | Begin database model | 1.0 | |
+| 20170202 | Rebuild application | 2.0 | |
+| 20170202 | Clean-up, push remaining docs to remote | 1.0 | |
