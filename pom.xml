@@ -17,7 +17,9 @@
         <log4j-version>1.2.17</log4j-version>
         <mysql-connector-version>5.1.39</mysql-connector-version>
         <hibernate-core-version>4.3.11.Final</hibernate-core-version>
+        <lombok-version>1.16.12</lombok-version>
         <maven-compiler-plugin-version>3.5</maven-compiler-plugin-version>
+        <maven-war-plugin-version>3.0.0</maven-war-plugin-version>
     </properties>
 
     <dependencies>
@@ -47,10 +49,15 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate-core-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>HibernateDemo</finalName>
+        <finalName>Assist</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -59,6 +66,13 @@
                 <configuration>
                     <source>${java-version}</source>
                     <target>${java-version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin-version}</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml> <!-- annotation-driven -->
                 </configuration>
             </plugin>
         </plugins>
