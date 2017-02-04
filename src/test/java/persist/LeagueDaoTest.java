@@ -1,5 +1,6 @@
 package persist;
 
+import com.bnisler.entity.Division;
 import com.bnisler.entity.League;
 import com.bnisler.persist.LeagueDao;
 import org.apache.log4j.Logger;
@@ -25,7 +26,7 @@ public class LeagueDaoTest {
     @Test
     public void testGetAllLeagues() {
         List<League> leagues = leagueDao.getAllLeagues();
-        for (League league : leagues) {
+        for (League league : leagues) { // TODO: LOG
             System.out.println(league.toString());
         }
         Assert.assertNotNull("DID NOT FIND ANY LEAGUES", leagues);
@@ -36,9 +37,22 @@ public class LeagueDaoTest {
     public void testGetLeagueById() {
         int id = 1;
         League league = leagueDao.getLeagueById(id);
-        System.out.println(league.toString());
+        System.out.println(league.toString()); // TODO: LOG
 
         Assert.assertNotNull("SEARCH BY ID RETURNED NULL LEAGUE", league);
         Assert.assertTrue("DID NOT FIND LEAGUE BY GIVEN ID", league.getId() == id);
+    }
+
+    @Test
+    public void testGetDivisions() {
+        int id = 1;
+        League league = leagueDao.getLeagueById(id);
+        for (Division division : league.getDivisions()) { // TODO: LOG
+            System.out.println(division.toString());
+        }
+
+        Assert.assertNotNull("SEARCH BY ID RETURNED NULL LEAGUE", league);
+        Assert.assertTrue("DID NOT FIND LEAGUE BY GIVEN ID", league.getId() == id);
+        Assert.assertNotNull("GET DIVISIONS FOR LEAGUE RETURNED NULL DIVISION", league.getDivisions());
     }
 }

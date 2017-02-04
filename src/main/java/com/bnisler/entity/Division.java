@@ -4,18 +4,16 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Ben on 2/4/2017.
  */
 @Entity
-@Table(name = "league")
+@Table(name = "division")
 @Getter
 @Setter
 @NoArgsConstructor
-public class League {
+public class Division {
 
     @Id
     @GeneratedValue(generator = "increment")
@@ -24,19 +22,13 @@ public class League {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "league")
-    private List<Division> divisions;
-
-    public List<Division> getDivisions() {
-        if (divisions == null) {
-            divisions = new ArrayList<>();
-        }
-        return divisions;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "league_id", nullable = false)
+    private League league;
 
     @Override
     public String toString() {
-        return "League{" +
+        return "Division{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
