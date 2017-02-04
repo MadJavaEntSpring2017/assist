@@ -10,7 +10,7 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/test</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/test_assist</property>
         <property name="connection.username">web</property>
         <property name="connection.password">Password1</property>
 
@@ -22,7 +22,8 @@
         <property name="format_sql">true</property>
 
         <!-- List the annotated entity class/es -->
-        <mapping class="com.bnisler.entity.User"/>
+        <!--<mapping class="com.bnisler.entity.User"/>-->
+        <mapping class="com.bnisler.entity.League"/>
 
     </session-factory>
 
