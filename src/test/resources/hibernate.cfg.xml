@@ -22,7 +22,6 @@
         <property name="format_sql">true</property>
 
         <!-- List the annotated entity class/es -->
-        <!--<mapping class="com.bnisler.entity.User"/>-->
         <mapping class="com.bnisler.entity.League"/>
         <mapping class="com.bnisler.entity.Division"/>
 

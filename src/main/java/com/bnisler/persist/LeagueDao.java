@@ -3,12 +3,14 @@ package com.bnisler.persist;
 import com.bnisler.entity.League;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
  * Created by Ben on 2/4/2017.
  */
+@Component
 public class LeagueDao {
 
     private final Logger LOG = Logger.getLogger(LeagueDao.class);
