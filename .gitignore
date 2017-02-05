@@ -18,7 +18,7 @@
 .idea/uiDesigner.xml
 
 #Artifacts
-.idea/artifacts
+.idea/artifacts/*
 
 # Gradle:
 .idea/gradle.xml
