@@ -43,3 +43,5 @@
 | 20170206 | Finish creating presentation 1 | 3.75 | |
 | 20170208 | Provide feedback to presenters, add links to my presentation in GitHub | 1.0 | |
 | 20170208 | Code Review for Kien and Heather | 2.0 | |
+| 20170208 | AWS setup - through video 3 | 2.25 | |
+
