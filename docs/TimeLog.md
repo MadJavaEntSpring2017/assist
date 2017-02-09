@@ -36,3 +36,10 @@
 | 20170201 | Begin database model | 1.0 | |
 | 20170202 | Rebuild application | 2.0 | |
 | 20170202 | Clean-up, push remaining docs to remote | 1.0 | |
+| 20170203 | Research on Lombok, begin creating presentation | 1.0 | |
+| 20170203 | Database design, populate with some dummy data | 3.0 | |
+| 20170204 | Generate SQL script, add DB to IntelliJ, create a couple DAOs, use them to access data in DB | 4.0 | |
+| 20170204 | Take a first crack at controllers, services | 1.5 | |
+| 20170206 | Finish creating presentation 1 | 3.75 | |
+| 20170208 | Provide feedback to presenters, add links to my presentation in GitHub | 1.0 | |
+| 20170208 | Code Review for Kien and Heather | 2.0 | |
