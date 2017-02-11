@@ -17,6 +17,7 @@
         <spring-test-version>4.3.2.RELEASE</spring-test-version>
         <spring-web-version>4.3.2.RELEASE</spring-web-version>
         <spring-webmvc-version>4.3.2.RELEASE</spring-webmvc-version>
+        <spring-orm-version>4.3.2.RELEASE</spring-orm-version>
         <jackson-core-version>2.7.8</jackson-core-version>
         <jackson-annotations-version>2.7.8</jackson-annotations-version>
         <jackson-databind-version>2.7.8</jackson-databind-version>
@@ -69,6 +70,12 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring-webmvc-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring-orm-version}</version>
+        </dependency>
+
 
         <!-- Java/JSON -->
         <dependency>

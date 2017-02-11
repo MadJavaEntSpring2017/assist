@@ -7,9 +7,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Ben on 2/4/2017.
- */
 @Entity
 @Table(name = "league")
 @Getter
@@ -24,7 +21,7 @@ public class League {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "league")
+    @OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
     private List<Division> divisions;
 
     public List<Division> getDivisions() {

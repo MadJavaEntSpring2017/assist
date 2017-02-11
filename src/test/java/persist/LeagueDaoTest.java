@@ -10,9 +10,6 @@ import org.junit.Test;
 
 import java.util.List;
 
-/**
- * Created by Ben on 2/4/2017.
- */
 public class LeagueDaoTest {
 
     private final Logger LOG = Logger.getLogger(LeagueDaoTest.class);
@@ -28,6 +25,9 @@ public class LeagueDaoTest {
         List<League> leagues = leagueDao.getAllLeagues();
         for (League league : leagues) { // TODO: LOG
             System.out.println(league.toString());
+            for (Division division : league.getDivisions()) {
+                System.out.println(division.toString());
+            }
         }
         Assert.assertNotNull("DID NOT FIND ANY LEAGUES", leagues);
         Assert.assertTrue("SIZE WASN'T > 0", leagues.size() > 0);
@@ -38,6 +38,9 @@ public class LeagueDaoTest {
         int id = 1;
         League league = leagueDao.getLeagueById(id);
         System.out.println(league.toString()); // TODO: LOG
+        for (Division division : league.getDivisions()) {
+            System.out.println(division);
+        }
 
         Assert.assertNotNull("SEARCH BY ID RETURNED NULL LEAGUE", league);
         Assert.assertTrue("DID NOT FIND LEAGUE BY GIVEN ID", league.getId() == id);

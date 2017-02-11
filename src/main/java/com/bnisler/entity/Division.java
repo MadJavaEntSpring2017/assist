@@ -5,9 +5,6 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-/**
- * Created by Ben on 2/4/2017.
- */
 @Entity
 @Table(name = "division")
 @Getter

@@ -1,16 +1,12 @@
 package com.bnisler.persist;
 
+import com.bnisler.entity.Division;
 import com.bnisler.entity.League;
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.springframework.stereotype.Component;
-
 import java.util.List;
 
-/**
- * Created by Ben on 2/4/2017.
- */
-@Component
 public class LeagueDao {
 
     private final Logger LOG = Logger.getLogger(LeagueDao.class);
@@ -20,9 +16,16 @@ public class LeagueDao {
      *
      * @return the all leagues
      */
-    public List<League> getAllLeagues() {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        return session.createCriteria(League.class).list();
+    public List<League> getAllLeagues() throws HibernateException {
+            Session session = SessionFactoryProvider.getSessionFactory().openSession();
+            List<League> leagues = session.createCriteria(League.class).list();
+            for (League league : leagues) {
+                for (Division division : league.getDivisions()) {
+                    division.getName();
+                }
+            }
+
+            return leagues;
     }
 
     /**
@@ -31,8 +34,13 @@ public class LeagueDao {
      * @param id the id
      * @return the league by id
      */
-    public League getLeagueById(int id) {
+    public League getLeagueById(int id) throws HibernateException {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        return (League) session.get(League.class, id);
+        League league = (League) session.get(League.class, id);
+        for (Division division : league.getDivisions()) {
+            division.getName();
+        }
+
+        return league;
     }
 }
