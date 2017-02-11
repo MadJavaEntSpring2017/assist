@@ -27,6 +27,7 @@
         <mysql-connector-version>5.1.39</mysql-connector-version>
         <hibernate-core-version>4.3.11.Final</hibernate-core-version>
         <lombok-version>1.16.12</lombok-version>
+        <maven-remote-resources-plugin-version>1.5</maven-remote-resources-plugin-version>
         <maven-compiler-plugin-version>3.5</maven-compiler-plugin-version>
         <maven-war-plugin-version>3.0.0</maven-war-plugin-version>
     </properties>
@@ -119,6 +120,14 @@
             <artifactId>lombok</artifactId>
             <version>${lombok-version}</version>
         </dependency>
+
+        <!-- Maven Remote Resources Plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-remote-resources-plugin</artifactId>
+            <version>${maven-remote-resources-plugin-version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
