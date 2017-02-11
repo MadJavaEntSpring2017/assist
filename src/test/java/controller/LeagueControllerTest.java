@@ -36,9 +36,9 @@ public class LeagueControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(leagueController).build();
     }
 
-    @Test
-    public void test() throws Exception {
-        mockMvc.perform(get("/leagues")).andDo(print());
-    }
+//    @Test
+//    public void test() throws Exception {
+//        mockMvc.perform(get("/leagues")).andDo(print());
+//    }
 
 }

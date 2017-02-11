@@ -18,11 +18,13 @@
         <spring-web-version>4.3.2.RELEASE</spring-web-version>
         <spring-webmvc-version>4.3.2.RELEASE</spring-webmvc-version>
         <spring-orm-version>4.3.2.RELEASE</spring-orm-version>
+        <spring-context-version>4.3.2.RELEASE</spring-context-version>
         <jackson-core-version>2.7.8</jackson-core-version>
         <jackson-annotations-version>2.7.8</jackson-annotations-version>
         <jackson-databind-version>2.7.8</jackson-databind-version>
         <javax-version>7.0</javax-version>
         <javax-servlet-api-version>3.1.0</javax-servlet-api-version>
+        <javax-servlet-jsp-jstl-api-version>1.2.1</javax-servlet-jsp-jstl-api-version>
         <log4j-version>1.2.17</log4j-version>
         <mysql-connector-version>5.1.39</mysql-connector-version>
         <hibernate-core-version>4.3.11.Final</hibernate-core-version>
@@ -76,6 +78,11 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring-orm-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-context-version}</version>
+        </dependency>
 
 
         <!-- Java/JSON -->
@@ -99,6 +106,12 @@
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>${javax-version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+            <version>${javax-servlet-jsp-jstl-api-version}</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>

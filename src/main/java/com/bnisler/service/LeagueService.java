@@ -10,13 +10,14 @@ import java.util.List;
 /**
  * Created by Ben on 2/4/2017.
  */
-@Component
+//@Component
 public class LeagueService {
 
-    @Autowired
-    private LeagueDao leagueDao;
+//    @Autowired
+//    private LeagueDao leagueDao;
 
     public List<League> findAllLeagues() {
+        LeagueDao leagueDao = new LeagueDao();
         return leagueDao.getAllLeagues();
     }
 }
