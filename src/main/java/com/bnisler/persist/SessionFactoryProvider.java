@@ -1,3 +1,4 @@
+/*
 package com.bnisler.persist;
 
 import org.hibernate.SessionFactory;
@@ -5,9 +6,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+*/
 /**
  * Created by Ben on 2/2/2017.
- */
+ *//*
+
 public class SessionFactoryProvider {
 
     private static SessionFactory sessionFactory;
@@ -29,3 +32,4 @@ public class SessionFactoryProvider {
 
     }
 }
+*/

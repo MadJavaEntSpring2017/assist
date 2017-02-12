@@ -14,21 +14,33 @@
         <java-version>1.8</java-version>
         <junit-version>4.12</junit-version>
         <mockito-all-version>1.10.19</mockito-all-version>
+
+        <!-- Spring -->
         <spring-test-version>4.3.2.RELEASE</spring-test-version>
         <spring-web-version>4.3.2.RELEASE</spring-web-version>
         <spring-webmvc-version>4.3.2.RELEASE</spring-webmvc-version>
         <spring-orm-version>4.3.2.RELEASE</spring-orm-version>
         <spring-context-version>4.3.2.RELEASE</spring-context-version>
+        <spring-context-support-version>4.3.2.RELEASE</spring-context-support-version>
+        <spring-jdbc-version>4.3.2.RELEASE</spring-jdbc-version>
+        <spring-tx-version>4.3.2.RELEASE</spring-tx-version>
+
+        <!-- Jackson -->
         <jackson-core-version>2.7.8</jackson-core-version>
         <jackson-annotations-version>2.7.8</jackson-annotations-version>
         <jackson-databind-version>2.7.8</jackson-databind-version>
+
+        <!-- Javax -->
         <javax-version>7.0</javax-version>
         <javax-servlet-api-version>3.1.0</javax-servlet-api-version>
         <javax-servlet-jsp-jstl-api-version>1.2.1</javax-servlet-jsp-jstl-api-version>
+
         <log4j-version>1.2.17</log4j-version>
         <mysql-connector-version>5.1.39</mysql-connector-version>
         <hibernate-core-version>4.3.11.Final</hibernate-core-version>
         <lombok-version>1.16.12</lombok-version>
+
+        <!-- Maven -->
         <maven-remote-resources-plugin-version>1.5</maven-remote-resources-plugin-version>
         <maven-compiler-plugin-version>3.5</maven-compiler-plugin-version>
         <maven-war-plugin-version>3.0.0</maven-war-plugin-version>
@@ -83,7 +95,21 @@
             <artifactId>spring-context</artifactId>
             <version>${spring-context-version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring-context-support-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring-jdbc-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring-tx-version}</version>
+        </dependency>
 
         <!-- Java/JSON -->
         <dependency>
@@ -102,6 +128,7 @@
             <version>${jackson-databind-version}</version>
         </dependency>
 
+        <!-- Javax -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -113,6 +140,7 @@
             <artifactId>javax.servlet.jsp.jstl-api</artifactId>
             <version>${javax-servlet-jsp-jstl-api-version}</version>
         </dependency>
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>

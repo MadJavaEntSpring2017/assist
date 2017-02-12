@@ -5,11 +5,19 @@ import com.bnisler.entity.League;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
+@Repository
 public class LeagueDao {
 
     private final Logger LOG = Logger.getLogger(LeagueDao.class);
+
+    @Autowired
+    private SessionFactory sessionFactory;
 
     /**
      * Gets all leagues.
@@ -17,15 +25,15 @@ public class LeagueDao {
      * @return the all leagues
      */
     public List<League> getAllLeagues() throws HibernateException {
-            Session session = SessionFactoryProvider.getSessionFactory().openSession();
-            List<League> leagues = session.createCriteria(League.class).list();
-            for (League league : leagues) {
-                for (Division division : league.getDivisions()) {
-                    division.getName();
-                }
+        Session session = sessionFactory.getCurrentSession();
+        List<League> leagues = session.createCriteria(League.class).list();
+        for (League league : leagues) {
+            for (Division division : league.getDivisions()) {
+                division.getName();
             }
+        }
 
-            return leagues;
+        return leagues;
     }
 
     /**
@@ -35,7 +43,7 @@ public class LeagueDao {
      * @return the league by id
      */
     public League getLeagueById(int id) throws HibernateException {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Session session = sessionFactory.getCurrentSession();
         League league = (League) session.get(League.class, id);
         for (Division division : league.getDivisions()) {
             division.getName();
