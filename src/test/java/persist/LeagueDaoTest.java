@@ -4,10 +4,18 @@ import com.bnisler.entity.Division;
 import com.bnisler.entity.League;
 import com.bnisler.persist.LeagueDao;
 import org.apache.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mock.web.MockHttpSession;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class LeagueDaoTest {
@@ -19,6 +27,7 @@ public class LeagueDaoTest {
     public void setup() {
         leagueDao = new LeagueDao();
     }
+
 
 //    @Test
 //    public void testGetAllLeagues() {
