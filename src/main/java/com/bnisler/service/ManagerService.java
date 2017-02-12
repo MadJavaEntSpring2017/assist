@@ -1,7 +1,7 @@
 package com.bnisler.service;
 
-import com.bnisler.entity.League;
-import com.bnisler.persist.LeagueDao;
+import com.bnisler.entity.Manager;
+import com.bnisler.persist.ManagerDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,16 +9,16 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Created by Ben on 2/4/2017.
+ * Created by Ben on 2/12/2017.
  */
 @Service
 @Transactional
-public class LeagueService {
+public class ManagerService {
 
     @Autowired
-    private LeagueDao leagueDao;
+    private ManagerDao managerDao;
 
-    public List<League> findAllLeagues() {
-        return leagueDao.getAllLeagues();
+    public List<Manager> findAllManagers() {
+        return managerDao.getAllManagers();
     }
 }
