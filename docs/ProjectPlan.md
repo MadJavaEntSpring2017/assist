@@ -25,15 +25,15 @@
  - [X] Implement a DAO
 
 ### Week 4
- - [ ] Time log
- - [ ] Add necessary unit tests
- - [ ] Add project to AWS
- - [ ] Finish data model
- - [ ] Create additional DAOs
+ - [X] Time log
+ - [X] Add necessary unit tests
+ - [X] Add project to AWS
+ - [X] Finish data model
+ - [X] Create additional DAOs
 
 ### Week 5
- - [ ] Time log
- - [ ] Add necessary unit tests
+ - [X] Time log
+ - [X] Add necessary unit tests
  - [ ] Add authorization, authentication
  - [ ] Add Bower
  - [ ] Add AngularJS

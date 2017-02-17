@@ -44,4 +44,12 @@
 | 20170208 | Provide feedback to presenters, add links to my presentation in GitHub | 1.0 | |
 | 20170208 | Code Review for Kien and Heather | 2.0 | |
 | 20170208 | AWS setup - through video 3 | 2.25 | |
+| 20170210 | AWS 4, deploy app, getting a server 500 error | 6.0 | |
+| 20170211 | Spring again... Integrate Controller, Service Repository layers | 4.25 | |
+| 20170212 | Integrate Sping, Hibernate into project; add Manager entity, dao | 7.25 | |
+| 20170214 | Deploy app to AWS again at class | 2.0 | |
+| 20170215 | Provide feedback to Louis, Eric | 0.25 | |
+| 20170215 | Do activities and exercises, checkpoint 2 clean-up | 4.0 | |
+| 20170216 | Incorporate Spring Test suite, use with JUnit to test DAO's | 2.0 | |
+| 20170217 | Project Plan update, update with Paula's suggestions, time log | 0.5 | |
 
