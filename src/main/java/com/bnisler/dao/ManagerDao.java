@@ -1,4 +1,4 @@
-package com.bnisler.persist;
+package com.bnisler.dao;
 
 import com.bnisler.entity.Manager;
 import org.apache.log4j.Logger;
@@ -10,13 +10,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Ben on 2/12/2017.
- */
 @Repository
 public class ManagerDao {
-
-    private final Logger LOG = Logger.getLogger(ManagerDao.class);
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -24,5 +19,10 @@ public class ManagerDao {
     public List<Manager> getAllManagers() throws HibernateException {
         Session session = sessionFactory.getCurrentSession();
         return session.createCriteria(Manager.class).list();
+    }
+
+    public Manager getManagerById(int id) throws HibernateException {
+        Session session = sessionFactory.getCurrentSession();
+        return (Manager) session.get(Manager.class, id);
     }
 }

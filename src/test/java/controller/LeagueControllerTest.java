@@ -10,9 +10,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
-/**
- * Created by Ben on 2/4/2017.
- */
 public class LeagueControllerTest {
 
     @InjectMocks

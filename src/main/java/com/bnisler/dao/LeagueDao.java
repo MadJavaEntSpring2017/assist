@@ -1,4 +1,4 @@
-package com.bnisler.persist;
+package com.bnisler.dao;
 
 import com.bnisler.entity.Division;
 import com.bnisler.entity.League;
@@ -14,13 +14,11 @@ import java.util.List;
 @Repository
 public class LeagueDao {
 
-    private final Logger LOG = Logger.getLogger(LeagueDao.class);
-
     @Autowired
     private SessionFactory sessionFactory;
 
     /**
-     * Gets all leagues.
+     * Gets all leagues and their divisions.
      *
      * @return the all leagues
      */
@@ -37,7 +35,7 @@ public class LeagueDao {
     }
 
     /**
-     * Gets league by id.
+     * Gets league by id and its divisions.
      *
      * @param id the id
      * @return the league by id

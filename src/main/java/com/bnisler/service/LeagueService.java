@@ -1,18 +1,15 @@
 package com.bnisler.service;
 
 import com.bnisler.entity.League;
-import com.bnisler.persist.LeagueDao;
+import com.bnisler.dao.LeagueDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Ben on 2/4/2017.
- */
 @Service
-@Transactional
+@Transactional(readOnly = true)
 public class LeagueService {
 
     @Autowired

@@ -1,18 +1,15 @@
 package com.bnisler.service;
 
 import com.bnisler.entity.Manager;
-import com.bnisler.persist.ManagerDao;
+import com.bnisler.dao.ManagerDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Ben on 2/12/2017.
- */
 @Service
-@Transactional
+@Transactional(readOnly = true)
 public class ManagerService {
 
     @Autowired
@@ -20,5 +17,9 @@ public class ManagerService {
 
     public List<Manager> findAllManagers() {
         return managerDao.getAllManagers();
+    }
+
+    public Manager findManagerById(int id) {
+        return managerDao.getManagerById(id);
     }
 }
