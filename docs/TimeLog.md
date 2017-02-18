@@ -52,4 +52,4 @@
 | 20170215 | Do activities and exercises, checkpoint 2 clean-up | 4.0 | |
 | 20170216 | Incorporate Spring Test suite, use with JUnit to test DAO's | 2.0 | |
 | 20170217 | Project Plan update, update with Paula's suggestions, time log | 0.5 | |
-
+| 20170217 | Do Activities 1 - 2 from Week 6, readings | 2.0 | |
