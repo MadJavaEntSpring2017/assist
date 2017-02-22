@@ -53,3 +53,6 @@
 | 20170216 | Incorporate Spring Test suite, use with JUnit to test DAO's | 2.0 | |
 | 20170217 | Project Plan update, update with Paula's suggestions, time log | 0.5 | |
 | 20170217 | Do Activities 1 - 2 from Week 6, readings | 2.0 | |
+| 20170220 | Work on Week 6 Activity 3 | 2.75 | |
+| 20170221 | More work on Week 6 Activity 3 using redone tutorial, updated links | 0.75 | |
+| 20170221 | Complete Week 5 Exercise | 0.5 | |
