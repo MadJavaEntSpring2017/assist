@@ -12,5 +12,10 @@
         <h2>Display Leagues</h2>
         <a href="leagues">Go to display all leagues</a>
 
+        <br />
+
+        <h2>Display Teams</h2>
+        <a href="teams">Go to display all teams</a>
+
     </body>
 </html>
