@@ -56,3 +56,6 @@
 | 20170220 | Work on Week 6 Activity 3 | 2.75 | |
 | 20170221 | More work on Week 6 Activity 3 using redone tutorial, updated links | 0.75 | |
 | 20170221 | Complete Week 5 Exercise | 0.5 | |
+| 20170223 | Watch week 7 videos : JAX, complete activities | 3.25 | |
+| 20170226 | Presentation 2 | 8.5 | |
+| 20170227 | Update project plan, time log, individual project checkpoint, finish presentation 2 | 3.0 | |
