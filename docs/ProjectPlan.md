@@ -34,25 +34,25 @@
 ### Week 5
  - [X] Time log
  - [X] Add necessary unit tests
- - [ ] Add authorization, authentication
- - [ ] Add Bower
- - [ ] Add AngularJS
- - [ ] Add additional frontend utilities
 
 ### Week 6
- - [ ] Time log
- - [ ] Add necessary unit tests
+ - [X] Time log
+ - [X] Add necessary unit tests
  - [ ] Implement repositories
  - [ ] Plan out necessary services
 
 ### Week 7
  - [ ] Time log
  - [ ] Add necessary unit tests
- - [ ] Implement RESTful services
+ - [ ] Add authorization, authentication (maybe via Spring)
+ - [ ] Add JAX-RS
 
 ### Week 8
  - [ ] Time log
  - [ ] Add necessary unit tests
+ - [ ] Implement RESTful services
+ - [ ] Add Bower
+ - [ ] Add AngularJS, Bootstrap
 
 ### Week 9
  - [ ] Time log
