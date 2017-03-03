@@ -17,5 +17,9 @@
         <h2>Display Teams</h2>
         <a href="teams">Go to display all teams</a>
 
+        <br />
+
+        <a href="restricted.jsp">Login</a>
+
     </body>
 </html>
