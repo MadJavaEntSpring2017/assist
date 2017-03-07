@@ -12,9 +12,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * Created by Ben on 2/12/2017.
- */
 @Configuration
 @EnableTransactionManagement
 public class DataConfig {
@@ -28,7 +25,7 @@ public class DataConfig {
         return sessionFactory;
     }
 
-    @Bean
+    @Bean(name = "dataSource")
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");

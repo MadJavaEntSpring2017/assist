@@ -6,16 +6,28 @@
 
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>restricted</web-resource-name>
-            <url-pattern>/restricted.jsp</url-pattern>
+            <web-resource-name>assist</web-resource-name>
+            <url-pattern>/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>player</role-name>
+            <role-name>team_mgr</role-name>
+            <role-name>league_mgr</role-name>
+            <role-name>official</role-name>
         </auth-constraint>
     </security-constraint>
 
     <security-role>
         <role-name>player</role-name>
+    </security-role>
+    <security-role>
+        <role-name>team_mgr</role-name>
+    </security-role>
+    <security-role>
+        <role-name>league_mgr</role-name>
+    </security-role>
+    <security-role>
+        <role-name>official</role-name>
     </security-role>
 
     <login-config>

@@ -24,6 +24,8 @@
         <spring-context-support-version>4.3.2.RELEASE</spring-context-support-version>
         <spring-jdbc-version>4.3.2.RELEASE</spring-jdbc-version>
         <spring-tx-version>4.3.2.RELEASE</spring-tx-version>
+        <spring-security-web-version>4.2.1.RELEASE</spring-security-web-version>
+        <spring-security-config-version>4.2.1.RELEASE</spring-security-config-version>
 
         <!-- Jackson -->
         <jackson-core-version>2.7.8</jackson-core-version>
@@ -35,6 +37,7 @@
         <javax-servlet-api-version>3.1.0</javax-servlet-api-version>
         <javax-servlet-jsp-jstl-api-version>1.2.1</javax-servlet-jsp-jstl-api-version>
 
+        <commons-logging-version>1.1.1</commons-logging-version>
         <log4j-version>1.2.17</log4j-version>
         <mysql-connector-version>5.1.39</mysql-connector-version>
         <hibernate-core-version>4.3.11.Final</hibernate-core-version>
@@ -110,6 +113,16 @@
             <artifactId>spring-tx</artifactId>
             <version>${spring-tx-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring-security-web-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-security-config-version}</version>
+        </dependency>
 
         <!-- Java/JSON -->
         <dependency>
@@ -141,6 +154,11 @@
             <version>${javax-servlet-jsp-jstl-api-version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging-version}</version>
+        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
