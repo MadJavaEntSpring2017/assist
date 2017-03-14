@@ -1,5 +1,6 @@
 package com.bnisler.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -22,6 +23,7 @@ public class League {
     private String name;
 
     @OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Division> divisions;
 
     public List<Division> getDivisions() {

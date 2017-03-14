@@ -1,5 +1,6 @@
 package com.bnisler.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -21,6 +22,7 @@ public class Division {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "league_id", nullable = false)
+    @JsonBackReference
     private League league;
 
     @Override
