@@ -17,5 +17,10 @@
         <h2>Display Teams</h2>
         <a href="teams">Go to display all teams</a>
 
+        <br />
+
+        <h2>Display Pitches</h2>
+        <a href="pitches">Go to display all pitches</a>
+
     </body>
 </html>
