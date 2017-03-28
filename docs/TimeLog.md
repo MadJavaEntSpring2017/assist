@@ -59,3 +59,22 @@
 | 20170223 | Watch week 7 videos : JAX, complete activities | 3.25 | |
 | 20170226 | Presentation 2 | 8.5 | |
 | 20170227 | Update project plan, time log, individual project checkpoint, finish presentation 2 | 3.0 | |
+| 20170228 | Update project, remove context and put locally, put presentation links to github, supply feedback for presenters | 4.0 | |
+| 20170301 | Team project : create DB | 1.5 | |
+| 20170303 | Build users table in individual project DB locally | 2.0 | |
+| 20170306 | Incoporate security / authorization into project, push to AWS | 3.0 | |
+| 20170307 | Team project pow-wow : decide next steps | 1.0 | |
+| 20170308 | Feedback for presenters | 0.5 | |
+| 20170310 | Code review for Olena, Code review for Mike | 2.5 | |
+| 20170311 | Implement CaloriesCalculator for team project, update DB schema | 1.5 | |
+| 20170312 | Team project branch conflict resolution, add methods and tests | 5.0 | |
+| 20170313 | Add REST services to individual project, incorporate Spring RestController annotation | 4.0 | |
+| 20170315 | Incorporate 'pitch' entity into project, create controller, service, dao layers. Add tests. | 0.75 | |
+| 20170316 | Week 9 exercise | 1.25 | |
+| 20170318 | Housekeeping work, investigate Angular 2 | 4.0 | |
+| 20170319 | More Angular2 research | 7.5 | |
+| 20170320 | Add more data into individual project DB, generate queries | 2.0 | |
+| 20170323 | Add additional team project methods | 1.25 | |
+| 20170354 | Angular 2 research, practice | 6.5 | |
+| 20170326 | Angular 2 research, practice | 7.5 | |
+| 20170227 | Feedback for presenter, week 10 lecture | 2.0 | |
