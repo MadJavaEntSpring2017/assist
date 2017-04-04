@@ -20,7 +20,7 @@ public class CalendarService extends GoogleCalendarService {
     private Calendar calendarService;
 
     public CalendarService() throws IOException {
-        calendarService = GoogleCalendarService.getCalendarService();
+        calendarService = getCalendarService();
     }
 
     public List<Event> findAllCalendarEvents() throws IOException {
