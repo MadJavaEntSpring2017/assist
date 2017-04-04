@@ -22,7 +22,7 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-public class CalendarService {
+public class GoogleCalendarService {
     /** Application name. */
     private static final String APPLICATION_NAME =
             "assist-madison";
@@ -70,7 +70,7 @@ public class CalendarService {
     public static Credential authorize() throws IOException {
         // Load client secrets.
         InputStream in =
-                CalendarService.class.getResourceAsStream("/client_secret.json");
+                GoogleCalendarService.class.getResourceAsStream("/client_secret.json");
         GoogleClientSecrets clientSecrets =
                 GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
