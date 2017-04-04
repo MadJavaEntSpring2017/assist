@@ -18,7 +18,7 @@ import java.util.List;
  * Created by Ben on 2/11/2017.
  */
 @Configuration
-@ComponentScan(basePackages = "com.bnisler")
+@ComponentScan(basePackages = "com")
 @EnableWebMvc
 public class WebAppConfig extends WebMvcConfigurerAdapter {
 

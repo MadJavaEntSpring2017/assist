@@ -45,6 +45,10 @@
         <hibernate-core-version>4.3.11.Final</hibernate-core-version>
         <lombok-version>1.16.12</lombok-version>
 
+        <!-- Google API -->
+        <google-api-version>1.22.0</google-api-version>
+        <google-api-calendar-version>v3-rev241-1.22.0</google-api-calendar-version>
+
         <!-- Maven -->
         <maven-remote-resources-plugin-version>1.5</maven-remote-resources-plugin-version>
         <maven-compiler-plugin-version>3.5</maven-compiler-plugin-version>
@@ -159,6 +163,73 @@
             <groupId>javax.servlet.jsp.jstl</groupId>
             <artifactId>javax.servlet.jsp.jstl-api</artifactId>
             <version>${javax-servlet-jsp-jstl-api-version}</version>
+        </dependency>
+
+        <!-- Google API -->
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-android</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-servlet</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-appengine</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-gson</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-jackson2</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-java6</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-protobuf</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client-xml</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-jetty</artifactId>
+            <version>${google-api-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-calendar</artifactId>
+            <version>${google-api-calendar-version}</version>
         </dependency>
 
         <dependency>
