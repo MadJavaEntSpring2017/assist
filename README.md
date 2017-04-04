@@ -19,6 +19,7 @@ Establishing a central location for players and managers to check in will keep e
   * Store player, manager, team, match information
 * Spring Framework (Data, WebMVC)
 * AngularJS Framework (Material Design) utilizing component architecture as my independent research topic
+* Incorporate Google Calendar API
 * Logging
   * Configure log4j to allow error logging in production, but debug logging for development.
 * Application and Database hosted on AWS
