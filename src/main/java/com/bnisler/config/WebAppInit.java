@@ -2,6 +2,8 @@ package com.bnisler.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.Filter;
+
 /**
  * Created by Ben on 2/11/2017.
  */
@@ -19,5 +21,11 @@ public class WebAppInit extends AbstractAnnotationConfigDispatcherServletInitial
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
+    }
+
+    @Override
+    protected Filter[] getServletFilters() {
+        Filter [] singleton = { new CORSFilter() };
+        return singleton;
     }
 }
