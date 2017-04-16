@@ -8,13 +8,29 @@
 
     function teamService($log, $q, $http) {
         var vm = this;
-        var REST_SERVICE_URI = 'http://localhost:8000/teams';
+        var REST_SERVICE_URI = 'http://localhost:8080/teams/';
 
         $log.debug(vm);
 
         return {
-            getAllTeam: getAllTeams
+            getAllTeams: getAllTeams,
+            getTeam: getTeam
         };
+
+        function getTeam(id) {
+            var deferred = $q.defer();
+            $http.get(REST_SERVICE_URI + id)
+                .then(
+                    function (results) {
+                        deferred.resolve(results.data);
+                    },
+                    function (error) {
+                        deferred.reject('Error while getting team.');
+                        $log.debug(error);
+                    }
+                );
+            return deferred.promise;
+        }
         
         function getAllTeams() {
             var deferred = $q.defer();

@@ -284,6 +284,11 @@
                 <version>${maven-war-plugin-version}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml> <!-- annotation-driven -->
+                    <webResources>
+                        <resource>
+                            <directory>src\main\frontend\app</directory>
+                        </resource>
+                    </webResources>
                 </configuration>
             </plugin>
         </plugins>
