@@ -16,9 +16,11 @@
     //     $routeProvider.otherwise({redirectTo: '/view1'});
     // }]);
 
-    configFunc.$inject = ['$locationProvider', '$routeProvider', '$stateProvider', '$urlRouterProvider'];
+    configFunc.$inject = ['$locationProvider', '$routeProvider', '$stateProvider', '$urlRouterProvider',
+                            '$http'];
 
-    function configFunc($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider) {
+    function configFunc($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider,
+                            $http) {
         $locationProvider.hashPrefix('!');
         // $routeProvider.otherwise({redirectTo: '/view1'});
         // $urlRouterProvider.otherwise('/view1');
