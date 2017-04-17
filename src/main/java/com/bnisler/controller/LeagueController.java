@@ -23,14 +23,4 @@ public class LeagueController {
         return leagueService.findAllLeagues();
     }
 
-//    @RequestMapping(value = "/leagues", method = RequestMethod.GET)
-//    public ModelAndView getAllLeagues() {
-//        List<League> leagues = leagueService.findAllLeagues();
-//
-//        ModelAndView mv = new ModelAndView();
-//        mv.setViewName("leagues");
-//        mv.addObject("leagues", leagues);
-//
-//        return mv;
-//    }
 }

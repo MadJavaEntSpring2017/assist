@@ -7,10 +7,7 @@
     teamService.$inject = ['$log', '$q', '$http'];
 
     function teamService($log, $q, $http) {
-        var vm = this;
         var REST_SERVICE_URI = 'http://localhost:8080/teams/';
-
-        $log.debug(vm);
 
         return {
             getAllTeams: getAllTeams,
