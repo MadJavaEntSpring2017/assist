@@ -4,11 +4,10 @@
         .module('assist-web')
         .controller('View1Controller', View1Controller);
 
-    View1Controller.$inject = ['$log', '$q', 'teamService'];
+    View1Controller.$inject = ['$log', 'teamService'];
 
-    function View1Controller($log, $q, teamService) {
+    function View1Controller($log, teamService) {
         var vm = this;
-        vm.title = 'at view 1';
 
         getAllTeams();
         getTeam(1);
@@ -30,6 +29,7 @@
                 .then(
                     function (results) {
                         $log.debug(results);
+                        vm.teams = results;
                     },
                     function (error) {
                         $log.debug('Error getting teams: ' + error);

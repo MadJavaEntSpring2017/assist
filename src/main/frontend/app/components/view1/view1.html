@@ -1,2 +1,19 @@
-<p>This is the partial for view 1.</p>
-<span>something else : {{ vm.title }}</span>
+<md-card>
+    <md-card-header>
+        <h1>Teams</h1>
+    </md-card-header>
+    <md-card-content>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="team in vm.teams">
+                    <td>{{team.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-card-content>
+</md-card>
