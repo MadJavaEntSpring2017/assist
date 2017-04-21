@@ -27,18 +27,5 @@
                 }
             );
         }
-
-
-
-
-
-        // getAllPlayers();
-        //
-        // function getAllPlayers() {
-        //     playerService.getAllPlayers()
-        //         .then(function (results) {
-        //             $log.debug(results);
-        //         });
-        // }
     }
 })();

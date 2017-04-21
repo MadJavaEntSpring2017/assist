@@ -1,34 +1,46 @@
-<table st-table="displayPlayers"
-       st-safe-src="vm.players"
-       class="table table-striped">
-    <thead>
-        <tr>
-            <th colspan="5">
-                <input st-search="" class="form-control" placeholder="Search players..." type="text" />
-            </th>
-        </tr>
-        <tr>
-            <th st-sort="firstname">Firstname</th>
-            <th st-sort="lastname">Lastname</th>
-            <th>Email</th>
-            <th>Birthday</th>
-            <th>IsActive</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="player in displayPlayers">
-            <td>{{player.firstname}}</td>
-            <td>{{player.lastname}}</td>
-            <td>{{player.email}}</td>
-            <td>{{player.birthday}}</td>
-            <td>{{player.active}}</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="5" class="text-center">
-                <div st-pagination="" st-items-by-page="25" st-displayed-pages="5"></div>
-            </td>
-        </tr>
-    </tfoot>
-</table>
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Players</span>
+        </md-card-title-text>
+        <md-button aria-label="add player" ui-sref="main.players-add">
+            <i class="mdi mdi-36px mdi-plus-box"></i>
+        </md-button>
+    </md-card-title>
+    <md-card-content>
+        <table st-table="displayPlayers"
+               st-safe-src="vm.players"
+               class="table table-striped">
+            <thead>
+            <tr>
+                <th colspan="5">
+                    <input st-search="" class="form-control" placeholder="Search players..." type="text"/>
+                </th>
+            </tr>
+            <tr>
+                <th st-sort="firstname">Firstname</th>
+                <th st-sort="lastname">Lastname</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>IsActive</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="player in displayPlayers">
+                <td>{{player.firstname}}</td>
+                <td>{{player.lastname}}</td>
+                <td>{{player.email}}</td>
+                <td>{{player.birthday}}</td>
+                <td>{{player.active}}</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="25" st-displayed-pages="5"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </md-card-content>
+</md-card>

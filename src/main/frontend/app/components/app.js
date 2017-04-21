@@ -19,13 +19,14 @@
     // }]);
 
     configFunc.$inject = ['$locationProvider', '$routeProvider', '$stateProvider', '$urlRouterProvider',
-                            '$httpProvider'];
+                            '$httpProvider', '$mdIconProvider'];
 
     function configFunc($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider,
                         $httpProvider) {
-        $locationProvider.hashPrefix('!');
+        // $locationProvider.hashPrefix('!');
         // $routeProvider.otherwise({redirectTo: '/view1'});
         // $urlRouterProvider.otherwise('/view1');
+
         $urlRouterProvider.otherwise('/home');
 
         $stateProvider
@@ -40,7 +41,12 @@
             })
             .state('main.players', {
                 url: '/players',
-                template: '<player-view></player-view>'
+                // template: '<player-container-view></player-container-view>'
+                component: 'playerContainerView'
             });
+            // .state('main.players-add', {
+            //     url: '/players/add',
+            //     template: '<player-view></player-view>'
+            // });
     }
 })();

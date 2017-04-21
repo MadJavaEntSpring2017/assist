@@ -5,9 +5,9 @@
         .component('playerView', {
             controller: PlayerViewController,
             controllerAs: 'vm',
-            templateUrl: 'components/player/player-view.html',
-            require: {},
-            bindings: {}
+            template: 'components/player/player-view.html',
+            bindings: {},
+            require: {}
         });
 
     PlayerViewController.$inject = [];
