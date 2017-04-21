@@ -25,7 +25,7 @@ public class PlayerDaoTest extends BaseDaoTest {
         player.setFirstname("New");
         player.setLastname("Player");
         player.setBirthday(new Date());
-        player.set_active(true);
+        player.setActive(true);
         player.setEmail("np@gmail.com");
         this.player = player;
     }

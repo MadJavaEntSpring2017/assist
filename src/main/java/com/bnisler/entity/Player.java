@@ -3,7 +3,6 @@ package com.bnisler.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -26,7 +25,9 @@ public class Player {
     private String firstname;
     private String lastname;
     private Date birthday;
-    private boolean is_active;
+
+    @Column(name = "is_active")
+    private boolean isActive;
     private String email;
 
     @ManyToOne
@@ -39,7 +40,7 @@ public class Player {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", birthday=" + birthday +
-                ", is_active=" + is_active +
+                ", isActive=" + isActive +
                 ", email='" + email + '\'' +
                 ", team=" + team +
                 '}';
