@@ -1,1 +1,27 @@
-<span>{{ vm.title }}</span>
+<table st-table="displayPlayers"
+       st-safe-src="vm.players"
+       class="table table-striped">
+    <thead>
+        <tr>
+            <th colspan="5">
+                <input st-search="" class="form-control" placeholder="Search players..." type="text" />
+            </th>
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Birthday</th>
+            <th>IsActive</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="player in displayPlayers">
+            <td>{{player.firstname}}</td>
+            <td>{{player.lastname}}</td>
+            <td>{{player.email}}</td>
+            <td>{{player.birthday}}</td>
+            <td>{{player.active}}</td>
+        </tr>
+    </tbody>
+</table>

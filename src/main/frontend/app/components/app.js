@@ -7,7 +7,7 @@
             'ngAnimate', 'ngAria',
             'ui.router', 'ngMessages',
             'ngMaterial',
-            'ngRoute',
+            'ngRoute', 'smart-table',
             // 'myApp.view1',
             // 'myApp.view2',
             'myApp.version'])
