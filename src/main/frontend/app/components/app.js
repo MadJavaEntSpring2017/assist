@@ -37,6 +37,10 @@
             .state('main.home', {
                 url: '/home',
                 templateUrl: 'components/home/home.html'
+            })
+            .state('main.players', {
+                url: '/players',
+                template: '<player-view></player-view>'
             });
     }
 })();
