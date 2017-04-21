@@ -15,9 +15,12 @@ import java.util.Date;
 @NoArgsConstructor
 public class Player {
 
+//    @Id
+//    @GeneratedValue(generator = "increment")
+//    @GenericGenerator(name = "increment", strategy = "increment")
+//    private int id;
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String firstname;
@@ -28,4 +31,17 @@ public class Player {
 
     @ManyToOne
     private Team team;
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", birthday=" + birthday +
+                ", is_active=" + is_active +
+                ", email='" + email + '\'' +
+                ", team=" + team +
+                '}';
+    }
 }

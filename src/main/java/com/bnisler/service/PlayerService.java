@@ -18,4 +18,8 @@ public class PlayerService {
     public List<Player> findAllPlayers() {
         return playerDao.findAllPlayers();
     }
+
+    public Player findPlayerById(int id) {
+        return playerDao.findById(id);
+    }
 }
