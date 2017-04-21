@@ -8,8 +8,8 @@
             </th>
         </tr>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
+            <th st-sort="firstname">Firstname</th>
+            <th st-sort="lastname">Lastname</th>
             <th>Email</th>
             <th>Birthday</th>
             <th>IsActive</th>
@@ -24,4 +24,11 @@
             <td>{{player.active}}</td>
         </tr>
     </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="25" st-displayed-pages="5"></div>
+            </td>
+        </tr>
+    </tfoot>
 </table>
