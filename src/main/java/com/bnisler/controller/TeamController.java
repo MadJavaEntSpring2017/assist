@@ -1,7 +1,8 @@
 package com.bnisler.controller;
 
 import com.bnisler.entity.Team;
-import com.bnisler.service.TeamService;
+import com.bnisler.service.team.TeamService;
+import com.bnisler.service.team.TeamWriteRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,4 +25,16 @@ public class TeamController {
         return teamService.findTeamById(teamId);
     }
 
+    @RequestMapping(value = "/teams", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON)
+    public Team createTeam(@RequestBody TeamWriteRequest writeRequest) {
+        int teamId = teamService.createTeam(writeRequest);
+        return teamService.findTeamById(teamId);
+    }
+
+    @RequestMapping(value = "/teams/{teamId}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON)
+    public Team updateTeam(@PathVariable ("teamId") int teamId,
+                           @RequestBody TeamWriteRequest writeRequest) {
+        teamService.updateTeam(teamId, writeRequest);
+        return teamService.findTeamById(teamId);
+    }
 }

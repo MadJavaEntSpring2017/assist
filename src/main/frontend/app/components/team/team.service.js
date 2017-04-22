@@ -11,8 +11,38 @@
 
         return {
             getAllTeams: getAllTeams,
-            getTeam: getTeam
+            getTeam: getTeam,
+            createTeam: createTeam,
+            updateTeam: updateTeam
         };
+
+        function updateTeam(teamId, writeRequest) {
+            var deferred = $q.defer();
+            $http.put(REST_SERVICE_URI + teamId, writeRequest)
+                .then(
+                    function (results) {
+                        deferred.resolve(results.data);
+                    },
+                    function (error) {
+                        deferred.reject('Error while updating team: ' + error);
+                    }
+                );
+            return deferred.promise;
+        }
+
+        function createTeam(writeRequest) {
+            var deferred = $q.defer();
+            $http.post(REST_SERVICE_URI, writeRequest)
+                .then(
+                    function (results) {
+                        deferred.resolve(results.data);
+                    },
+                    function (error) {
+                        deferred.reject('Error while creating team: ' + error);
+                    }
+                );
+            return deferred.promise;
+        }
 
         function getTeam(teamId) {
             var deferred = $q.defer();

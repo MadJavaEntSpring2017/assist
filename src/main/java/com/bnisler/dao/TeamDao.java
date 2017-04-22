@@ -10,19 +10,24 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * The type Team dao.
- */
 @Repository("teamDao")
 public class TeamDao extends AbstractDao<Integer, Team> {
 
     @SuppressWarnings("unchecked")
-    public List<Team> getAllTeams() {
+    public List<Team> findAllTeams() {
         Criteria criteria = createEntityCriteria();
         return (List<Team>) criteria.list();
     }
 
-    public Team getTeamById(int id) {
+    public Team findTeamById(int id) {
         return getByKey(id);
+    }
+
+    public int saveTeam(Team team) {
+        return save(team);
+    }
+
+    public void updateTeam(Team team) {
+        update(team);
     }
 }

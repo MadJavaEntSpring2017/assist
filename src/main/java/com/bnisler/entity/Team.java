@@ -25,7 +25,7 @@ public class Team {
     private String name;
 
     @Column(name = "is_active")
-    private boolean isActive;
+    private boolean active;
 
     @ManyToOne
     private Division division;
@@ -50,7 +50,7 @@ public class Team {
         return "Team{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", isActive=" + isActive +
+                ", active=" + active +
                 ", division=" + division +
 //                ", manager=" + manager +
                 '}';

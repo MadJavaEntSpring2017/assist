@@ -1,7 +1,8 @@
 <md-card>
     <md-card-title>
         <md-card-title-text>
-            <span class="md-headline">Add a player</span>
+            <span class="md-headline" ng-if="vm.player">Player</span>
+            <span class="md-headline" ng-if="!vm.player">Add a player</span>
         </md-card-title-text>
     </md-card-title>
     <md-card-content>

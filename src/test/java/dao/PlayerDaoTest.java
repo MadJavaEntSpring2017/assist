@@ -83,7 +83,7 @@ public class PlayerDaoTest extends BaseDaoTest {
 
     @Test
     public void testUpdatePlayer() {
-        int id = playerDao.save(player);
+        int id = playerDao.savePlayer(player);
         Player savedPlayer = playerDao.findById(id);
 
         LOG.info(savedPlayer + " in testUpdatePlayer()");
