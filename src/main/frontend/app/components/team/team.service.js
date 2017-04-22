@@ -4,9 +4,9 @@
         .module('assist-web')
         .factory('teamService', teamService);
 
-    teamService.$inject = ['$log', '$q', '$http'];
+    teamService.$inject = ['$q', '$http'];
 
-    function teamService($log, $q, $http) {
+    function teamService($q, $http) {
         var REST_SERVICE_URI = 'http://localhost:8080/teams/';
 
         return {
@@ -14,16 +14,15 @@
             getTeam: getTeam
         };
 
-        function getTeam(id) {
+        function getTeam(teamId) {
             var deferred = $q.defer();
-            $http.get(REST_SERVICE_URI + id)
+            $http.get(REST_SERVICE_URI + teamId)
                 .then(
                     function (results) {
                         deferred.resolve(results.data);
                     },
                     function (error) {
-                        deferred.reject('Error while getting team.');
-                        $log.debug(error);
+                        deferred.reject('Error while getting team: ' + error);
                     }
                 );
             return deferred.promise;
@@ -37,8 +36,7 @@
                         deferred.resolve(results.data);
                     },
                     function (error) {
-                        deferred.reject('Error while getting teams.');
-                        $log.debug(error);
+                        deferred.reject('Error while getting teams: ' + error);
                     }
                 );
             return deferred.promise;

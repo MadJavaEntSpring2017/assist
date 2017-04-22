@@ -8,7 +8,6 @@
             'ui.router', 'ngMessages',
             'ngMaterial',
             'ngRoute', 'smart-table',
-            // 'myApp.view1',
             // 'myApp.view2',
             'myApp.version'])
         .config(configFunc);
@@ -19,7 +18,7 @@
     // }]);
 
     configFunc.$inject = ['$locationProvider', '$routeProvider', '$stateProvider', '$urlRouterProvider',
-                            '$httpProvider', '$mdIconProvider'];
+                            '$httpProvider'];
 
     function configFunc($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider,
                         $httpProvider) {
@@ -38,15 +37,6 @@
             .state('main.home', {
                 url: '/home',
                 templateUrl: 'components/home/home.html'
-            })
-            .state('main.players', {
-                url: '/players',
-                // template: '<player-container-view></player-container-view>'
-                component: 'playerContainerView'
             });
-            // .state('main.players-add', {
-            //     url: '/players/add',
-            //     template: '<player-view></player-view>'
-            // });
     }
 })();

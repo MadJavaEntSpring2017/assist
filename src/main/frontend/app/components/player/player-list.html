@@ -14,7 +14,7 @@
             <thead>
             <tr>
                 <th colspan="5">
-                    <input st-search="" class="form-control" placeholder="Search players..." type="text"/>
+                    <input st-search="" class="form-control" placeholder="Search players..." type="text" />
                 </th>
             </tr>
             <tr>
@@ -27,7 +27,11 @@
             </thead>
             <tbody>
             <tr ng-repeat="player in displayPlayers">
-                <td>{{player.firstname}}</td>
+                <td>
+                    <a ui-sref="main.player({ playerId:player.id })">
+                        {{player.firstname}}
+                    </a>
+                </td>
                 <td>{{player.lastname}}</td>
                 <td>{{player.email}}</td>
                 <td>{{player.birthday}}</td>

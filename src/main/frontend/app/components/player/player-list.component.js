@@ -7,25 +7,14 @@
             controllerAs: 'vm',
             templateUrl: 'components/player/player-list.html',
             require: {},
-            bindings: {}
+            bindings: {
+                players: '<'
+            }
         });
 
-    PlayerListController.$inject = ['$log', '$q', 'playerService'];
+    PlayerListController.$inject = [];
 
-    function PlayerListController($log, $q, playerService) {
+    function PlayerListController() {
         var vm = this;
-        vm.title = 'Player List';
-
-        vm.$onInit = activate();
-
-        function activate() {
-            $q.all({
-                players: playerService.getAllPlayers()
-            }).then(
-                function (results) {
-                    vm.players = results.players;
-                }
-            );
-        }
     }
 })();
