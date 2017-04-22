@@ -1,2 +1,71 @@
-<span ng-if="vm.player">{{vm.player.firstname}}</span>
-<span ng-if="!vm.player">Add player</span>
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Add a player</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <md-content layout-padding>
+
+            <form name="playerForm" ng-submit="vm.save()" novalidate>
+
+                <div layout="row" layout-xs="column">
+                    <md-input-container class="md-block" flex="45">
+                        <label>Firstname</label>
+                        <input ng-model="vm.player.firstname"
+                               name="firstname"
+                               required
+                               type="text" />
+                        <div ng-messages="playerForm.firstname.$error">
+                            <div ng-message="required">Firstname is required</div>
+                        </div>
+                    </md-input-container>
+                    <div flex="5"></div>
+                    <md-input-container class="md-block" flex="45">
+                        <label>Lastname</label>
+                        <input ng-model="vm.player.lastname"
+                               name="lastname"
+                               required
+                               type="text" />
+                        <div ng-messages="playerForm.lastname.$error">
+                            <div ng-message="required">Lastname is required</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-xs="column">
+                    <md-input-container class="md-block" flex="45">
+                        <label>Email</label>
+                        <input ng-model="vm.player.email"
+                               name="email"
+                               required
+                               type="email" />
+                        <div ng-messages="playerForm.email.$error">
+                            <div ng-message="required">Email is required</div>
+                        </div>
+                    </md-input-container>
+                    <div flex="5"></div>
+                    <md-input-container class="md-block">
+                        <label>Birthday</label>
+                        <md-datepicker ng-model="vm.player.birthday"
+                                       name="birthday"
+                                       required>
+                        </md-datepicker>
+                        <div ng-messages="playerForm.birthday.$error">
+                            <div ng-message="required">Birthday is required</div>
+                        </div>
+                    </md-input-container>
+                    <div flex="5"></div>
+                    <md-input-container class="md-block">
+                        <md-checkbox ng-model="vm.player.active"
+                                     name="active">
+                            Active
+                        </md-checkbox>
+                    </md-input-container>
+                </div>
+                <md-button type="submit" class="md-raised md-primary" ng-disabled="playerForm.$invalid">Save</md-button>
+
+            </form>
+
+        </md-content>
+    </md-card-content>
+</md-card>

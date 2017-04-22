@@ -12,8 +12,23 @@
         return {
             getAllPlayers: getAllPlayers,
             getPlayer: getPlayer,
-            createPlayer: createPlayer
+            createPlayer: createPlayer,
+            updatePlayer: updatePlayer
         };
+
+        function updatePlayer(playerId, writeRequest) {
+            var deferred = $q.defer();
+            $http.put(REST_SERVICE_URI + playerId, writeRequest)
+                .then(
+                    function (results) {
+                        deferred.resolve(results.data);
+                    },
+                    function (error) {
+                        deferred.reject('Error while updating player: ' + error);
+                    }
+                );
+            return deferred.promise;
+        }
 
         function createPlayer(writeRequest) {
             var deferred = $q.defer();

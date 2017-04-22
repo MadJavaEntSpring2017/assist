@@ -27,7 +27,7 @@ public class Player {
     private Date birthday;
 
     @Column(name = "is_active")
-    private boolean isActive;
+    private boolean active;
     private String email;
 
     @ManyToOne
@@ -40,7 +40,7 @@ public class Player {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", birthday=" + birthday +
-                ", isActive=" + isActive +
+                ", active=" + active +
                 ", email='" + email + '\'' +
                 ", team=" + team +
                 '}';

@@ -2,6 +2,7 @@ package com.bnisler.config;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -41,6 +42,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.registerModule(new Hibernate4Module());
         converter.setObjectMapper(objectMapper);
         return converter;

@@ -16,5 +16,6 @@
 
     function PlayerListController() {
         var vm = this;
+
     }
 })();
