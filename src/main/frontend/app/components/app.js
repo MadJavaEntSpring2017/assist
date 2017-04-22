@@ -8,7 +8,7 @@
             'ui.router', 'ngMessages',
             'ngMaterial',
             'ngRoute', 'smart-table',
-            // 'myApp.view2',
+            'ngFlash',
             'myApp.version'])
         .config(configFunc);
     // .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
@@ -18,10 +18,10 @@
     // }]);
 
     configFunc.$inject = ['$locationProvider', '$routeProvider', '$stateProvider', '$urlRouterProvider',
-                            '$httpProvider', '$mdDateLocaleProvider'];
+                            '$httpProvider', 'FlashProvider'];
 
     function configFunc($locationProvider, $routeProvider, $stateProvider, $urlRouterProvider,
-                        $httpProvider) {
+                        $httpProvider, FlashProvider) {
         // $locationProvider.hashPrefix('!');
         // $routeProvider.otherwise({redirectTo: '/view1'});
         // $urlRouterProvider.otherwise('/view1');
@@ -70,5 +70,6 @@
                 }
             }
         }
+
     }
 })();

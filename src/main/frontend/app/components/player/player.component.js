@@ -12,9 +12,9 @@
             require: {}
         });
 
-    PlayerController.$inject = ['playerService'];
+    PlayerController.$inject = ['playerService', 'messageService'];
 
-    function PlayerController(playerService) {
+    function PlayerController(playerService, messageService) {
         var vm = this;
 
         vm.save = save;
@@ -22,11 +22,19 @@
         function save() {
             var writeRequest = createWriteRequest();
 
+            var savePromise;
             if (vm.player && vm.player.id) {
-                playerService.updatePlayer(vm.player.id, writeRequest);
+                savePromise = playerService.updatePlayer(vm.player.id, writeRequest);
             } else {
-                playerService.createPlayer(writeRequest);
+                savePromise = playerService.createPlayer(writeRequest);
             }
+
+            savePromise
+                .then(function () {
+                    messageService.showSuccessMessage();
+                }).catch(function () {
+                    messageService.showErrorMessage();
+                });
         }
 
         function createWriteRequest() {
