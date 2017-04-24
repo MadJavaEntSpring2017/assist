@@ -12,6 +12,7 @@
         return {
             getAllPlayers: getAllPlayers,
             getPlayer: getPlayer,
+            getPlayerDetails: getPlayerDetails,
             createPlayer: createPlayer,
             updatePlayer: updatePlayer
         };
@@ -53,6 +54,20 @@
                     },
                     function (error) {
                         deferred.reject('Error while getting player: ' + error);
+                    }
+                );
+            return deferred.promise;
+        }
+
+        function getPlayerDetails(playerId) {
+            var deferred = $q.defer();
+            $http.get(REST_SERVICE_URI + playerId + '/details')
+                .then(
+                    function (results) {
+                        deferred.resolve(results.data);
+                    },
+                    function (error) {
+                        deferred.reject('Error while getting player details: ' + error);
                     }
                 );
             return deferred.promise;

@@ -30,8 +30,11 @@ public class Player {
     private boolean active;
     private String email;
 
-    @ManyToOne
-    private Team team;
+//    @ManyToOne
+//    private Team team;
+
+    @Column(name = "team_id")
+    private Long teamId;
 
     @Override
     public String toString() {
@@ -42,7 +45,7 @@ public class Player {
                 ", birthday=" + birthday +
                 ", active=" + active +
                 ", email='" + email + '\'' +
-                ", team=" + team +
+                ", teamId=" + teamId +
                 '}';
     }
 }

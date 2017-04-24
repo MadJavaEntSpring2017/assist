@@ -24,7 +24,7 @@
             component: 'player',
             resolve: {
                 player: function (playerService, $stateParams) {
-                    return playerService.getPlayer($stateParams.playerId);
+                    return playerService.getPlayerDetails($stateParams.playerId);
                 }
             }
         };

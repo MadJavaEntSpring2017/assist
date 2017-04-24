@@ -22,6 +22,13 @@ public class PlayerService {
         return playerDao.findAllPlayers();
     }
 
+    public PlayerDetail findPlayerDetails(Long playerId) {
+        Player player = playerDao.findById(playerId);
+        PlayerDetail playerDetail = new PlayerDetail();
+        playerMapper.mapEntityToDetail(player, playerDetail);
+        return playerDetail;
+    }
+
     public Player findPlayerById(Long id) {
         return playerDao.findById(id);
     }
