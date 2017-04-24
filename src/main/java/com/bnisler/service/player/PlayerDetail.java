@@ -10,6 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class PlayerDetail {
+    private Long id;
     private String firstname;
     private String lastname;
     private Date birthday;

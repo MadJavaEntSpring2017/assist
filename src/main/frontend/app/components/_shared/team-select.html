@@ -1,0 +1,11 @@
+<md-input-container>
+    <label>Team</label>
+    <md-select ng-model="vm.team"
+               ng-model-options="{trackBy: '$value.id'}"
+               md-on-close="vm.selectTeam()">
+        <md-option ng-value="null">None</md-option>
+        <md-option ng-repeat="team in vm.teams" ng-value="team">
+            {{team.name}}
+        </md-option>
+    </md-select>
+</md-input-container>

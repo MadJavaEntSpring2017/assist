@@ -13,4 +13,5 @@ public class PlayerWriteRequest {
     private Date birthday;
     private boolean isActive;
     private String email;
+    private Long teamId;
 }

@@ -18,9 +18,9 @@
             }
         };
 
-        var playerState = {
-            name: 'main.player',
-            url: '/players/:playerId',
+        var playerDetailState = {
+            name: 'main.player-details',
+            url: '/players/:playerId/details',
             component: 'player',
             resolve: {
                 player: function (playerService, $stateParams) {
@@ -37,7 +37,7 @@
 
         $stateProvider
             .state(playerListState)
-            .state(playerState)
+            .state(playerDetailState)
             .state(playerAddState);
     }
 })();
