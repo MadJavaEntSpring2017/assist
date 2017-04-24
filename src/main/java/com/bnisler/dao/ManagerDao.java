@@ -21,7 +21,7 @@ public class ManagerDao {
         return session.createCriteria(Manager.class).list();
     }
 
-    public Manager getManagerById(int id) throws HibernateException {
+    public Manager getManagerById(Long id) throws HibernateException {
         Session session = sessionFactory.getCurrentSession();
         return (Manager) session.get(Manager.class, id);
     }

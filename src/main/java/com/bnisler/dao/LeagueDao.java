@@ -40,7 +40,7 @@ public class LeagueDao {
      * @param id the id
      * @return the league by id
      */
-    public League getLeagueById(int id) throws HibernateException {
+    public League getLeagueById(Long id) throws HibernateException {
         Session session = sessionFactory.getCurrentSession();
         League league = (League) session.get(League.class, id);
         for (Division division : league.getDivisions()) {

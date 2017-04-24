@@ -42,23 +42,23 @@ public class PlayerDaoTest extends BaseDaoTest {
 
     @Test
     public void testGetPlayerById() {
-        int id = 1;
+        Long id = 1L;
         Player player = null;
         player = playerDao.findById(id);
 
         LOG.info(player);
         Assert.assertNotNull("Didn't pull back a player", player);
-        Assert.assertTrue("Wrong player", player.getId() == 1);
+        Assert.assertTrue("Wrong player", player.getId().equals(id));
     }
 
     @Test
     public void testSavePlayer() {
-        int id = playerDao.savePlayer(player);
+        Long id = playerDao.savePlayer(player);
         Player savedPlayer = playerDao.findById(id);
 
         LOG.info(savedPlayer + " in testSavePlayer()");
         Assert.assertNotNull("Couldn't save player", savedPlayer);
-        Assert.assertTrue("Wrong player id", id == savedPlayer.getId());
+        Assert.assertTrue("Wrong player id", id.equals(savedPlayer.getId()));
         Assert.assertTrue("Wrong player firstname", player.getFirstname().equals(savedPlayer.getFirstname()));
         Assert.assertTrue("Wrong player lastname", player.getLastname().equals(savedPlayer.getLastname()));
         Assert.assertTrue("Wrong player email", player.getEmail().equals(savedPlayer.getEmail()));
@@ -66,12 +66,12 @@ public class PlayerDaoTest extends BaseDaoTest {
 
     @Test
     public void testDeletePlayer() {
-        int id = playerDao.save(player);
+        Long id = playerDao.save(player);
         Player savedPlayer = playerDao.findById(id);
 
         LOG.info(savedPlayer + " in testDeletePlayer()");
         Assert.assertNotNull("Couldn't save player", savedPlayer);
-        Assert.assertTrue("Wrong player id", id == savedPlayer.getId());
+        Assert.assertTrue("Wrong player id", id.equals(savedPlayer.getId()));
         Assert.assertTrue("Wrong player firstname", player.getFirstname().equals(savedPlayer.getFirstname()));
         Assert.assertTrue("Wrong player lastname", player.getLastname().equals(savedPlayer.getLastname()));
         Assert.assertTrue("Wrong player email", player.getEmail().equals(savedPlayer.getEmail()));
@@ -83,12 +83,12 @@ public class PlayerDaoTest extends BaseDaoTest {
 
     @Test
     public void testUpdatePlayer() {
-        int id = playerDao.savePlayer(player);
+        Long id = playerDao.savePlayer(player);
         Player savedPlayer = playerDao.findById(id);
 
         LOG.info(savedPlayer + " in testUpdatePlayer()");
         Assert.assertNotNull("Couldn't save player", savedPlayer);
-        Assert.assertTrue("Wrong player id", id == savedPlayer.getId());
+        Assert.assertTrue("Wrong player id", id.equals(savedPlayer.getId()));
         Assert.assertTrue("Wrong player firstname", player.getFirstname().equals(savedPlayer.getFirstname()));
         Assert.assertTrue("Wrong player lastname", player.getLastname().equals(savedPlayer.getLastname()));
         Assert.assertTrue("Wrong player email", player.getEmail().equals(savedPlayer.getEmail()));

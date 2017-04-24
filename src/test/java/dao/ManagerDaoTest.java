@@ -28,12 +28,12 @@ public class ManagerDaoTest extends BaseDaoTest {
 
     @Test
     public void testGetManagerById() {
-        int id = 1;
+        Long id = 1L;
         Manager manager = null;
         manager = managerDao.getManagerById(id);
 
         LOG.info(manager);
         Assert.assertNotNull("Couldn't pull back manager", manager);
-        Assert.assertTrue("Wrong manager", manager.getId() == id);
+        Assert.assertTrue("Wrong manager", manager.getId().equals(id));
     }
 }

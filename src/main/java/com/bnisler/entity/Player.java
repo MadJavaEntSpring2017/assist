@@ -20,7 +20,7 @@ public class Player {
 //    private int id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String firstname;
     private String lastname;

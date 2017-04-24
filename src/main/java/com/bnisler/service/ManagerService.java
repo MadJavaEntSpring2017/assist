@@ -19,7 +19,7 @@ public class ManagerService {
         return managerDao.getAllManagers();
     }
 
-    public Manager findManagerById(int id) {
+    public Manager findManagerById(Long id) {
         return managerDao.getManagerById(id);
     }
 }

@@ -27,12 +27,12 @@ public class LeagueDaoTest extends BaseDaoTest {
 
     @Test
     public void testGetLeagueById() {
-        int id = 1;
+        Long id = 1L;
         League league = null;
         league = leagueDao.getLeagueById(id);
 
         LOG.info(league);
         Assert.assertNotNull("Didn't pull back a league", league);
-        Assert.assertTrue("Wrong league", league.getId() == 1);
+        Assert.assertTrue("Wrong league", league.getId().equals(id));
     }
 }

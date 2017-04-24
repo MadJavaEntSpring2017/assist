@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository("teamDao")
-public class TeamDao extends AbstractDao<Integer, Team> {
+public class TeamDao extends AbstractDao<Long, Team> {
 
     @SuppressWarnings("unchecked")
     public List<Team> findAllTeams() {
@@ -19,11 +19,11 @@ public class TeamDao extends AbstractDao<Integer, Team> {
         return (List<Team>) criteria.list();
     }
 
-    public Team findTeamById(int id) {
+    public Team findTeamById(Long id) {
         return getByKey(id);
     }
 
-    public int saveTeam(Team team) {
+    public Long saveTeam(Team team) {
         return save(team);
     }
 

@@ -18,7 +18,7 @@ public class League {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    private int id;
+    private Long id;
 
     private String name;
 

@@ -20,17 +20,17 @@ public class TeamService {
 
     public List<Team> findAllTeams() { return teamDao.findAllTeams(); }
 
-    public Team findTeamById(int id) { return teamDao.findTeamById(id); }
+    public Team findTeamById(Long id) { return teamDao.findTeamById(id); }
 
     @Transactional
-    public int createTeam(TeamWriteRequest writeRequest) {
+    public Long createTeam(TeamWriteRequest writeRequest) {
         Team team = new Team();
         teamMapper.mapToEntity(writeRequest, team);
         return teamDao.saveTeam(team);
     }
 
     @Transactional
-    public void updateTeam(int teamId, TeamWriteRequest writeRequest) {
+    public void updateTeam(Long teamId, TeamWriteRequest writeRequest) {
         Team team = teamDao.findTeamById(teamId);
         teamMapper.mapToEntity(writeRequest, team);
         teamDao.updateTeam(team);

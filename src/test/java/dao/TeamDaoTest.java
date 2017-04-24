@@ -38,34 +38,34 @@ public class TeamDaoTest extends BaseDaoTest {
 
     @Test
     public void testGetTeamById() {
-        int id = 1;
+        Long id = 1L;
         Team team = null;
         team = teamDao.findTeamById(id);
 
         LOG.info(team);
         Assert.assertNotNull("Didn't pull back a team", team);
-        Assert.assertTrue("Wrong team", team.getId() == 1);
+        Assert.assertTrue("Wrong team", team.getId().equals(id));
     }
 
     @Test
     public void testCreateTeam() {
-        int id = teamDao.saveTeam(team);
+        Long id = teamDao.saveTeam(team);
         Team savedTeam = teamDao.findTeamById(id);
 
         LOG.info(savedTeam + " in testCreateTeam()");
         Assert.assertNotNull("Couldn't save team", savedTeam);
-        Assert.assertTrue("Wrong team id", id == savedTeam.getId());
+        Assert.assertTrue("Wrong team id", id.equals(savedTeam.getId()));
         Assert.assertTrue("Wrong team name", team.getName().equals(savedTeam.getName()));
     }
 
     @Test
     public void testUpdateTeam() {
-        int id = teamDao.saveTeam(team);
+        Long id = teamDao.saveTeam(team);
         Team savedTeam = teamDao.findTeamById(id);
 
         LOG.info(savedTeam + " in testUpdateTeam()");
         Assert.assertNotNull("Couldn't save team", savedTeam);
-        Assert.assertTrue("Wrong team id", id == savedTeam.getId());
+        Assert.assertTrue("Wrong team id", id.equals(savedTeam.getId()));
         Assert.assertTrue("Wrong team name", team.getName().equals(savedTeam.getName()));
 
         String expectedName = "Updated";

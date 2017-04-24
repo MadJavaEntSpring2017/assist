@@ -22,26 +22,26 @@ public class PlayerService {
         return playerDao.findAllPlayers();
     }
 
-    public Player findPlayerById(int id) {
+    public Player findPlayerById(Long id) {
         return playerDao.findById(id);
     }
 
     @Transactional
-    public int createPlayer(PlayerWriteRequest writeRequest) {
+    public Long createPlayer(PlayerWriteRequest writeRequest) {
         Player player = new Player();
         playerMapper.mapToEntity(writeRequest, player);
         return playerDao.savePlayer(player);
     }
 
     @Transactional
-    public void updatePlayer(int playerId, PlayerWriteRequest writeRequest) {
+    public void updatePlayer(Long playerId, PlayerWriteRequest writeRequest) {
         Player player = playerDao.findById(playerId);
         playerMapper.mapToEntity(writeRequest, player);
         playerDao.updatePlayer(player); // todo: do i need to explicitly call update?
     }
 
     @Transactional
-    public void deletePlayer(int playerId) {
+    public void deletePlayer(Long playerId) {
         Player player = findPlayerById(playerId);
         playerDao.deletePlayer(player);
     }

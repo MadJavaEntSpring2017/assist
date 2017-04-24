@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository("playerDao")
-public class PlayerDao extends AbstractDao<Integer, Player> {
+public class PlayerDao extends AbstractDao<Long, Player> {
 
     @SuppressWarnings("unchecked")
     public List<Player> findAllPlayers() {
@@ -15,7 +15,7 @@ public class PlayerDao extends AbstractDao<Integer, Player> {
         return (List<Player>) criteria.list();
     }
 
-    public Player findById(int id) {
+    public Player findById(Long id) {
         return getByKey(id);
     }
 
@@ -23,7 +23,7 @@ public class PlayerDao extends AbstractDao<Integer, Player> {
 //        persist(player);
 //    }
 
-    public int savePlayer(Player player) {
+    public Long savePlayer(Player player) {
         return save(player);
     }
 

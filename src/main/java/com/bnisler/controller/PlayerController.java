@@ -19,23 +19,23 @@ public class PlayerController {
     public List<Player> getAllPlayers() { return playerService.findAllPlayers(); }
 
     @RequestMapping(value = "/players/{playerId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
-    public Player getPlayer(@PathVariable ("playerId") int playerId) { return playerService.findPlayerById(playerId); }
+    public Player getPlayer(@PathVariable ("playerId") Long playerId) { return playerService.findPlayerById(playerId); }
 
     @RequestMapping(value = "/players", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON)
     public Player createPlayer(@RequestBody PlayerWriteRequest writeRequest) {
-        int id = playerService.createPlayer(writeRequest);
+        Long id = playerService.createPlayer(writeRequest);
         return playerService.findPlayerById(id);
     }
 
     @RequestMapping(value = "/players/{playerId}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON)
-    public Player updatePlayer(@PathVariable("playerId") int playerId,
+    public Player updatePlayer(@PathVariable("playerId") Long playerId,
                                @RequestBody PlayerWriteRequest writeRequest) {
         playerService.updatePlayer(playerId, writeRequest);
         return playerService.findPlayerById(playerId);
     }
 
     @RequestMapping(value = "/players/{playerId}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON)
-    public void deletePlayer(@PathVariable ("playerId") int playerId) {
+    public void deletePlayer(@PathVariable ("playerId") Long playerId) {
         playerService.deletePlayer(playerId);
     }
 }

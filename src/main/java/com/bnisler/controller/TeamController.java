@@ -21,18 +21,18 @@ public class TeamController {
     }
 
     @RequestMapping(value = "/teams/{teamId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
-    public Team getTeamById(@PathVariable("teamId") int teamId) {
+    public Team getTeamById(@PathVariable("teamId") Long teamId) {
         return teamService.findTeamById(teamId);
     }
 
     @RequestMapping(value = "/teams", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON)
     public Team createTeam(@RequestBody TeamWriteRequest writeRequest) {
-        int teamId = teamService.createTeam(writeRequest);
+        Long teamId = teamService.createTeam(writeRequest);
         return teamService.findTeamById(teamId);
     }
 
     @RequestMapping(value = "/teams/{teamId}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON)
-    public Team updateTeam(@PathVariable ("teamId") int teamId,
+    public Team updateTeam(@PathVariable ("teamId") Long teamId,
                            @RequestBody TeamWriteRequest writeRequest) {
         teamService.updateTeam(teamId, writeRequest);
         return teamService.findTeamById(teamId);
