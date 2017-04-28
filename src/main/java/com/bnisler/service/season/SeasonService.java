@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service(value = "seasonService")
@@ -19,15 +20,14 @@ public class SeasonService {
     @Autowired
     private SeasonMapper seasonMapper;
 
-    public List<Season> getAllSeasons() {
-//        return seasonDao.findAllSeasons();
-        List<Season> seasons = seasonDao.findAllSeasons();
-        for (Season season : seasons) {
-            for (Session session : season.getSessions()) {
-                session.getSplit().getName();
-            }
+    public List<SeasonDetail> getAllSeasons() {
+        List<SeasonDetail> seasonDetails = new ArrayList<>();
+        for (Season season : seasonDao.findAllSeasons()) {
+            SeasonDetail seasonDetail = new SeasonDetail();
+            seasonMapper.mapEntityToDetail(season, seasonDetail);
+            seasonDetails.add(seasonDetail);
         }
-        return seasons;
+        return seasonDetails;
     }
 
     public Season getSeasonById(Long seasonId) {

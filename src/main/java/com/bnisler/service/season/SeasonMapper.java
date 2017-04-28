@@ -2,6 +2,7 @@ package com.bnisler.service.season;
 
 import com.bnisler.dao.SessionDao;
 import com.bnisler.entity.Season;
+import com.bnisler.entity.Session;
 import com.bnisler.service.MappingUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,8 @@ public class SeasonMapper {
 
     public void mapEntityToDetail(Season season, SeasonDetail seasonDetail) {
         mappingUtils.copyProperties(season, seasonDetail);
-
+        for (Session session : season.getSessions()) {
+            session.getSplit().getName();
+        }
     }
 }

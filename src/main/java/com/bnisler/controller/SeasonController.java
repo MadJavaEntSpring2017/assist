@@ -1,12 +1,11 @@
 package com.bnisler.controller;
 
 import com.bnisler.entity.Season;
+import com.bnisler.service.season.SeasonDetail;
 import com.bnisler.service.season.SeasonService;
+import com.bnisler.service.season.SeasonWriteRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -18,12 +17,30 @@ public class SeasonController {
     private SeasonService seasonService;
 
     @RequestMapping(value = "/seasons", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
-    public List<Season> getAllSeasons() {
+    public List<SeasonDetail> getAllSeasons() {
         return seasonService.getAllSeasons();
     }
 
     @RequestMapping(value = "/seasons/{seasonId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
     public Season getSeason(@PathVariable ("seasonId") Long seasonId) {
+        return seasonService.getSeasonById(seasonId);
+    }
+
+    @RequestMapping(value = "/seasons/{seasonId}/details", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+    public SeasonDetail getSeasonDetails(@PathVariable ("seasonId") Long seasonId) {
+        return seasonService.getSeasonDetails(seasonId);
+    }
+
+    @RequestMapping(value = "/seasons", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON)
+    public Season createSeason(@RequestBody SeasonWriteRequest writeRequest) {
+        Long seasonId = seasonService.createSeason(writeRequest);
+        return seasonService.getSeasonById(seasonId);
+    }
+
+    @RequestMapping(value = "/seasons/{seasonId}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON)
+    public Season updateSeason(@PathVariable ("seasonId") Long seasonId,
+                               @RequestBody SeasonWriteRequest writeRequest) {
+        seasonService.updateSeason(seasonId, writeRequest);
         return seasonService.getSeasonById(seasonId);
     }
 }
