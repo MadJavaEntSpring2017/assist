@@ -44,7 +44,7 @@ public class PlayerService {
     public void updatePlayer(Long playerId, PlayerWriteRequest writeRequest) {
         Player player = playerDao.findById(playerId);
         playerMapper.mapToEntity(writeRequest, player);
-        playerDao.updatePlayer(player); // todo: do i need to explicitly call update?
+        playerDao.updatePlayer(player);
     }
 
     @Transactional

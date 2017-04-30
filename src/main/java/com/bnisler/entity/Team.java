@@ -30,16 +30,15 @@ public class Team {
     @ManyToOne
     private Division division;
 
-//    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
-//    @JsonManagedReference
-//    private List<Player> players;
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+    private List<Player> players;
 
-//    public List<Player> getPlayers() {
-//        if (players == null) {
-//            players = new ArrayList<>();
-//        }
-//        return players;
-//    }
+    public List<Player> getPlayers() {
+        if (players == null) {
+            players = new ArrayList<>();
+        }
+        return players;
+    }
 
     // TODO: uncomment this when security implemented
 //    @OneToOne(fetch = FetchType.LAZY)

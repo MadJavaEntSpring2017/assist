@@ -66,7 +66,7 @@ public class PlayerMapperTest extends BaseDaoTest {
         Assert.assertTrue("Couldn't copy lastname", player.getLastname().equals(writeRequest.getLastname()));
         Assert.assertTrue("Couldn't copy email", player.getEmail().equals(writeRequest.getEmail()));
 
-        player.setTeamId(teamId);
+        player.setTeam(team);
 
         PlayerDetail playerDetail = new PlayerDetail();
         playerMapper.mapEntityToDetail(player, playerDetail);

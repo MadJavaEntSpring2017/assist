@@ -18,13 +18,16 @@ public class PlayerMapper {
 
     public void mapToEntity(PlayerWriteRequest writeRequest, Player player) {
         mappingUtils.copyProperties(writeRequest, player);
+        if (writeRequest.getTeamId() != null) {
+            Team team = teamDao.findTeamById(writeRequest.getTeamId());
+            player.setTeam(team);
+        }
     }
 
     public void mapEntityToDetail(Player player, PlayerDetail playerDetail) {
         mappingUtils.copyProperties(player, playerDetail);
-        if (player.getTeamId() != null) {
-            Team team = teamDao.findTeamById(player.getTeamId());
-            playerDetail.setTeam(team);
+        if (player.getTeam() != null) {
+            player.getTeam().getName();
         }
     }
 }

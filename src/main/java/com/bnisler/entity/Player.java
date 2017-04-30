@@ -1,5 +1,6 @@
 package com.bnisler.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,10 +15,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class Player {
 
-//    @Id
-//    @GeneratedValue(generator = "increment")
-//    @GenericGenerator(name = "increment", strategy = "increment")
-//    private int id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,11 +27,9 @@ public class Player {
     private boolean active;
     private String email;
 
-//    @ManyToOne
-//    private Team team;
-
-    @Column(name = "team_id")
-    private Long teamId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    private Team team;
 
     @Override
     public String toString() {
@@ -44,8 +39,7 @@ public class Player {
                 ", lastname='" + lastname + '\'' +
                 ", birthday=" + birthday +
                 ", active=" + active +
-                ", email='" + email + '\'' +
-                ", teamId=" + teamId +
+                ", email='" + email +
                 '}';
     }
 }
