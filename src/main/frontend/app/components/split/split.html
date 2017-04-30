@@ -1,0 +1,29 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline" ng-if="vm.split">Split</span>
+            <span class="md-headline" ng-if="!vm.split">Add a split</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout-padding>
+
+        <form name="splitForm" ng-submit="vm.save()" novalidate>
+
+            <div layout-xs="column" layout="row">
+                <md-input-container class="md-block" flex="45">
+                    <label>Name</label>
+                    <input ng-model="vm.split.name"
+                           name="name"
+                           required
+                           type="text" />
+                    <div ng-messages="splitForm.name.$error">
+                        <div ng-message="required">Split name is required</div>
+                    </div>
+                </md-input-container>
+            </div>
+            <md-button type="submit" class="md-raised md-primary" ng-disabled="splitForm.$invalid">Save</md-button>
+
+        </form>
+
+    </md-card-content>
+</md-card>

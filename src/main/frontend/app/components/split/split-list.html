@@ -1,0 +1,32 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Splits</span>
+        </md-card-title-text>
+        <md-button class="md-raised md-primary md-icon-button"
+                   aria-label="add split"
+                   ui-sref="main.splits-add">
+            <md-icon md-font-set="material-icons">add</md-icon>
+        </md-button>
+    </md-card-title>
+    <md-card-content>
+        <table st-table="displaySplits"
+               st-safe-src="vm.splits"
+               class="table table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="split in displaySplits">
+                <td>
+                    <a ui-sref="main.split-details({ splitId:split.id })">
+                        {{split.name}}
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </md-card-content>
+</md-card>
