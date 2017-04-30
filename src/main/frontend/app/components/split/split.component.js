@@ -34,11 +34,10 @@
             }
 
             savePromise
-                .then(function(results) {
+                .then(function (results) {
+                    messageService.showSuccessMessage();
                     $state.go('main.split-details', { splitId: results.id });
-                    messageService.showSuccessMessage()
-                })
-                .catch(function() {
+                }).catch(function () {
                     messageService.showErrorMessage()
                 });
         }

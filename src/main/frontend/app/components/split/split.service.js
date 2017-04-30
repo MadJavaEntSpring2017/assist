@@ -4,10 +4,9 @@
         .module('assist-web')
         .factory('splitService', splitService);
 
-    splitService.$inject = ['$q', '$http'];
+    splitService.$inject = ['apiService'];
 
-    function splitService($q, $http) {
-        var REST_SERVICE_URI = 'http://localhost:8080/splits/';
+    function splitService(apiService) {
 
         return {
             getAllSplits: getAllSplits,
@@ -17,59 +16,19 @@
         };
 
         function createSplit(writeRequest) {
-            var deferred = $q.defer();
-            $http.post(REST_SERVICE_URI, writeRequest)
-                .then(
-                    function (results) {
-                        deferred.resolve(results.data);
-                    },
-                    function (error) {
-                        deferred.reject('Error while creating split: ' + error);
-                    }
-                );
-            return deferred.promise;
+            return apiService.post('/splits', writeRequest);
         }
 
         function updateSplit(splitId, writeRequest) {
-            var deferred = $q.defer();
-            $http.put(REST_SERVICE_URI + splitId, writeRequest)
-                .then(
-                    function (results) {
-                        deferred.resolve(results.data);
-                    },
-                    function (error) {
-                        deferred.reject('Error while updating split: ' + error);
-                    }
-                );
-            return deferred.promise;
+            return apiService.put('/splits/' + splitId, writeRequest);
         }
 
         function getSplitDetails(splitId) {
-            var deferred = $q.defer();
-            $http.get(REST_SERVICE_URI + splitId + '/details')
-                .then(
-                    function (results) {
-                        deferred.resolve(results.data);
-                    },
-                    function (error) {
-                        deferred.reject('Error while getting split details: ' + error);
-                    }
-                );
-            return deferred.promise;
+            return apiService.get('/splits/' + splitId + '/details');
         }
 
         function getAllSplits() {
-            var deferred = $q.defer();
-            $http.get(REST_SERVICE_URI)
-                .then(
-                    function (results) {
-                        deferred.resolve(results.data);
-                    },
-                    function (error) {
-                        deferred.reject('Error while getting splits: ' + error);
-                    }
-                );
-            return deferred.promise;
+            return apiService.get('/splits');
         }
     }
 })();

@@ -32,8 +32,9 @@ public class SplitController {
     }
 
     @RequestMapping(value = "/splits/{splitId}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON)
-    public void updateSplit(@PathVariable ("splitId") Long splitId,
+    public SplitDetail updateSplit(@PathVariable ("splitId") Long splitId,
                             @RequestBody SplitWriteRequest writeRequest) {
         splitService.updateSplit(splitId, writeRequest);
+        return splitService.getSplitDetails(splitId);
     }
 }
