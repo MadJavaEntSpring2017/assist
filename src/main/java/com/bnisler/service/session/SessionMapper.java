@@ -23,6 +23,7 @@ public class SessionMapper {
     private SplitDao splitDao;
 
     public void mapToEntity(SessionWriteRequest writeRequest, Session session) {
+        mappingUtils.copyProperties(writeRequest, session);
         Season season = seasonDao.findSeasonById(writeRequest.getSeasonId());
         session.setSeason(season);
         Split split = splitDao.findSplitById(writeRequest.getSplitId());
@@ -30,6 +31,7 @@ public class SessionMapper {
     }
 
     public void mapEntityToDetail(Session session, SessionDetail sessionDetail) {
+        mappingUtils.copyProperties(session, sessionDetail);
         sessionDetail.setSeasonName(session.getSeason().getName());
         sessionDetail.setSplitName(session.getSplit().getName());
     }

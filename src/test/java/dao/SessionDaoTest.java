@@ -32,7 +32,8 @@ public class SessionDaoTest extends BaseDaoTest {
     @Before
     public void setup() {
         Session session = new Session();
-        Season season = seasonDao.findSeasonById(1L);
+        session.setYear(2017);
+        Season season = seasonDao.findSeasonById(3L);
         session.setSeason(season);
         Split split = splitDao.findSplitById(1L);
         session.setSplit(split);
@@ -68,6 +69,7 @@ public class SessionDaoTest extends BaseDaoTest {
         LOG.info(savedSession + " in testSaveSession()");
         Assert.assertNotNull("Couldn't save session", savedSession);
         Assert.assertTrue("Wrong session id", savedSession.getId().equals(sessionId));
+        Assert.assertTrue("Wrong year", savedSession.getYear().equals(session.getYear()));
         Assert.assertTrue("Wrong season", savedSession.getSeason().equals(session.getSeason()));
         Assert.assertTrue("Wrong split", savedSession.getSplit().equals(session.getSplit()));
     }
@@ -80,6 +82,7 @@ public class SessionDaoTest extends BaseDaoTest {
         LOG.info(savedSession + " in testUpdateSession()");
         Assert.assertNotNull("Couldn't save session", savedSession);
         Assert.assertTrue("Wrong session id", savedSession.getId().equals(sessionId));
+        Assert.assertTrue("Wrong year", savedSession.getYear().equals(session.getYear()));
         Assert.assertTrue("Wrong season", savedSession.getSeason().equals(session.getSeason()));
         Assert.assertTrue("Wrong split", savedSession.getSplit().equals(session.getSplit()));
 

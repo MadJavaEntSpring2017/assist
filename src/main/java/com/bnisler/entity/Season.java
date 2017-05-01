@@ -23,6 +23,9 @@ public class Season {
 
     private String name;
 
+    @Column(name = "is_active")
+    private boolean active;
+
     @OneToMany(mappedBy = "season", fetch = FetchType.LAZY)
     private List<Session> sessions;
 

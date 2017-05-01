@@ -11,5 +11,6 @@ import java.util.List;
 public class SeasonDetail {
     private Long id;
     private String name;
+    private boolean active;
     private List<Session> sessions;
 }

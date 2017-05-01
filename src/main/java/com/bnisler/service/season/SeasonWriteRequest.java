@@ -7,4 +7,5 @@ import lombok.Setter;
 @Setter
 public class SeasonWriteRequest {
     private String name;
+    private boolean active;
 }

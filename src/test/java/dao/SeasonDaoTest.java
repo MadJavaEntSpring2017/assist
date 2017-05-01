@@ -21,7 +21,8 @@ public class SeasonDaoTest extends BaseDaoTest {
     @Before
     public void setup() {
         Season season = new Season();
-        season.setName("Fall2015/Spring2016");
+        season.setName("Fall2014/Spring2015");
+        season.setActive(true);
         this.season = season;
     }
 
@@ -54,6 +55,7 @@ public class SeasonDaoTest extends BaseDaoTest {
         LOG.info(savedSeason + "in testSaveSeason()");
         Assert.assertNotNull("Couldn't save season", savedSeason);
         Assert.assertTrue("Wrong season id", seasonId.equals(savedSeason.getId()));
+        Assert.assertTrue("Wrong active boolean", savedSeason.isActive() == season.isActive());
         Assert.assertTrue("Wrong season name", season.getName().equals(savedSeason.getName()));
     }
 
@@ -65,6 +67,7 @@ public class SeasonDaoTest extends BaseDaoTest {
         LOG.info(savedSeason + "in testUpdateSeason()");
         Assert.assertNotNull("Couldn't save season", savedSeason);
         Assert.assertTrue("Wrong season id", seasonId.equals(savedSeason.getId()));
+        Assert.assertTrue("Wrong active boolean", savedSeason.isActive() == season.isActive());
         Assert.assertTrue("Wrong season name", season.getName().equals(savedSeason.getName()));
 
         String expectedName = "Updated";

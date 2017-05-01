@@ -19,7 +19,10 @@ public class Session {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    private Integer year;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Split split;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -30,6 +33,7 @@ public class Session {
     public String toString() {
         return "Session{" +
                 "id=" + id +
+                ", year=" + year +
                 ", split=" + split +
                 ", season=" + season +
                 '}';
