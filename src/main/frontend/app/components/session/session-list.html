@@ -1,0 +1,42 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Sessions</span>
+        </md-card-title-text>
+        <md-button class="md-raised md-primary md-icon-button"
+                   aria-label="add session">
+                   <!--ui-sref="">-->
+            <md-icon md-font-set="material-icons">add</md-icon>
+        </md-button>
+    </md-card-title>
+    <md-card-content>
+        <table st-table="displaySessions"
+               st-safe-src="vm.sessions"
+               class="table table-striped">
+            <thead>
+            <tr>
+                <th colspan="2">
+                    <input st-search="" class="form-control" placeholder="Search sessions..." type="text" />
+                </th>
+            </tr>
+            <tr>
+                <th st-sort="season">Season</th>
+                <th st-sort="split">Split</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="session in displaySessions">
+                <td>{{session.seasonName}}</td>
+                <td>{{session.splitName}}</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <div st-pagination="" st-items-by-page="25" st-displayed-pages="5"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </md-card-content>
+</md-card>
