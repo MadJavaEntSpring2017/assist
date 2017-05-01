@@ -19,7 +19,7 @@
         }
 
         function getSessionDetails(sessionId) {
-            return apiService.get('/sessions/' + sessionId);
+            return apiService.get('/sessions/' + sessionId + '/details');
         }
 
         function createSession(writeRequest) {

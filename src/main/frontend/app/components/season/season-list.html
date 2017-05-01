@@ -1,0 +1,37 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Seasons</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <table st-table="displaySeasons"
+               st-safe-src="vm.seasons"
+               class="table table-striped">
+            <thead>
+            <tr>
+                <th colspan="2">
+                    <input st-search="" class="form-control" placeholder="Search seasons..." type="text" />
+                </th>
+            </tr>
+            <tr>
+                <th st-sort="name">Name</th>
+                <th>Is Active</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="season in displaySeasons">
+                <td>{{season.name}}</td>
+                <td>{{season.active}}</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <div st-pagination="" st-items-by-page="25" st-displayed-pages="5"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </md-card-content>
+</md-card>
