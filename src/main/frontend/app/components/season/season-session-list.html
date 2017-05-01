@@ -1,0 +1,29 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Sessions</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <md-content>
+            <table st-table="displaySessions"
+                   st-safe-src="vm.sessions"
+                   class="table table-striped">
+                <thead>
+                <tr>
+                    <th st-sort="year">Year</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="session in displaySessions">
+                    <td>
+                        <a ui-sref="main.session-details({ sessionId:session.id })">
+                            {{session.year}}
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </md-content>
+    </md-card-content>
+</md-card>

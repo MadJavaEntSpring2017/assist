@@ -3,6 +3,11 @@
         <md-card-title-text>
             <span class="md-headline">Seasons</span>
         </md-card-title-text>
+        <md-button class="md-raised md-primary md-icon-button"
+                   aria-label="add season"
+                   ui-sref="main.seasons-add">
+            <md-icon md-font-set="material-icons">add</md-icon>
+        </md-button>
     </md-card-title>
     <md-card-content>
         <table st-table="displaySeasons"
@@ -16,12 +21,16 @@
             </tr>
             <tr>
                 <th st-sort="name">Name</th>
-                <th>Is Active</th>
+                <th>Active</th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="season in displaySeasons">
-                <td>{{season.name}}</td>
+                <td>
+                    <a ui-sref="main.season-details({ seasonId:season.id })">
+                        {{season.name}}
+                    </a>
+                </td>
                 <td>{{season.active}}</td>
             </tr>
             </tbody>

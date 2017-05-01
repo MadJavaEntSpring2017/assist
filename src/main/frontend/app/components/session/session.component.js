@@ -19,21 +19,45 @@
 
         vm.save = save;
         vm.selectSplit = selectSplit;
+        vm.selectSeason = selectSeason;
 
         vm.$onInit = function () {
             vm.session = vm.session ? vm.session : {};
         };
+
+        function selectSeason(event) {
+            vm.session.season = event.season;
+        }
 
         function selectSplit(event) {
             vm.session.split = event.split;
         }
 
         function save() {
-            console.log('saving session'); // todo delete
+            var writeRequest = createWriteRequest();
+
+            var savePromise;
+            if (vm.session && vm.session.id) {
+                savePromise = sessionService.updateSession(vm.session.id, writeRequest);
+            } else {
+                savePromise = sessionService.createSession(writeRequest);
+            }
+
+            savePromise
+                .then(function (results) {
+                    messageService.showSuccessMessage();
+                    $state.go('main.session-details', { sessionId: results.id });
+                }).catch(function () {
+                    messageService.showErrorMessage();
+                });
         }
 
         function createWriteRequest() {
-            return {};
+            return {
+                year: vm.session.year,
+                seasonId: vm.session.season.id,
+                splitId: vm.session.split.id
+            };
         }
     }
 })();

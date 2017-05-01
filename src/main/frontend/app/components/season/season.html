@@ -1,35 +1,40 @@
 <md-card>
     <md-card-title>
         <md-card-title-text>
-            <span class="md-headline" ng-if="vm.team">Team</span>
+            <span class="md-headline" ng-if="vm.season">Season</span>
         </md-card-title-text>
     </md-card-title>
     <md-card-content>
         <md-content layout-padding>
 
-            <form name="teamForm" ng-submit="vm.save()" novalidate>
-                <div layout-xs="column" layout="row">
+            <form name="seasonForm" ng-submit="vm.save()" novalidate>
+
+                <div layout="row" layout-xs="column">
                     <md-input-container class="md-block" flex="45">
                         <label>Name</label>
-                        <input ng-model="vm.team.name"
+                        <input ng-model="vm.season.name"
                                name="name"
                                required
                                type="text" />
-                        <div ng-messages="teamForm.name.$error">
+                        <div ng-messages="seasonForm.name.$error">
                             <div ng-message="required">Name is required</div>
                         </div>
                     </md-input-container>
                     <div flex="5"></div>
                     <md-input-container class="md-block">
-                        <md-checkbox ng-model="vm.team.active"
+                        <md-checkbox ng-model="vm.season.active"
                                      name="active">
                             Active
                         </md-checkbox>
                     </md-input-container>
                 </div>
-                <md-button type="submit" class="md-raised md-primary" ng-disabled="teamForm.$invalid">Save</md-button>
+                <md-button type="submit" class="md-raised md-primary" ng-disabled="seasonForm.$invalid">Save</md-button>
+
             </form>
 
         </md-content>
     </md-card-content>
 </md-card>
+
+<season-session-list ng-if="vm.season.sessions" sessions="vm.season.sessions">
+</season-session-list>

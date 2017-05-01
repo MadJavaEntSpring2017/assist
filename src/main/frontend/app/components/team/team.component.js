@@ -19,6 +19,10 @@
 
         vm.save = save;
 
+        vm.$onInit = function () {
+            vm.team = vm.team ? vm.team : {};
+        };
+
         function save() {
             var writeRequest = createWriteRequest();
 

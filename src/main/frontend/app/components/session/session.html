@@ -2,7 +2,6 @@
     <md-card-title>
         <md-card-title-text>
             <span class="md-headline" ng-if="vm.session">Session</span>
-            <span class="md-headline" ng-if="!vm.session">Add a session</span>
         </md-card-title-text>
     </md-card-title>
     <md-card-content>
@@ -10,7 +9,11 @@
 
             <form name="sessionForm" ng-submit="vm.save()" novalidate>
 
-                <!--todo season select in it's own row-->
+                <div layout-xs="column" layout="row">
+                    <season-select season="vm.session.season"
+                                   on-select="vm.selectSeason($event)">
+                    </season-select>
+                </div>
                 <div layout="row" layout-xs="column">
                     <md-input-container class="md-block" flex="45">
                         <label>Year</label>
