@@ -59,6 +59,8 @@ public class SessionDaoTest extends BaseDaoTest {
         LOG.info(session);
         Assert.assertNotNull("Couldn't pull back the session", session);
         Assert.assertTrue("Couldn't find the session", session.getId().equals(sessionId));
+        Assert.assertNotNull("Couldn't pull back session's season", session.getSeason());
+        Assert.assertNotNull("Couldn't pull back session's split", session.getSplit());
     }
 
     @Test

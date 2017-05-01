@@ -12,9 +12,15 @@
             require: {}
         });
 
-    SessionListController.$inject = [];
+    SessionListController.$inject = ['$state'];
 
-    function SessionListController() {
+    function SessionListController($state) {
         var vm = this;
+
+        vm.edit = edit;
+
+        function edit(session) {
+            $state.go('main.session-details', { sessionId: session.id });
+        }
     }
 })();

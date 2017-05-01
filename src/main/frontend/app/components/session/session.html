@@ -1,0 +1,36 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline" ng-if="vm.session">Session</span>
+            <span class="md-headline" ng-if="!vm.session">Add a session</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <md-content layout-padding>
+
+            <form name="sessionForm" ng-submit="vm.save()" novalidate>
+
+                <!--todo season select in it's own row-->
+                <div layout="row" layout-xs="column">
+                    <md-input-container class="md-block" flex="45">
+                        <label>Year</label>
+                        <input ng-model="vm.session.year"
+                               name="year"
+                               required
+                               type="text" />
+                        <div ng-messages="sessionForm.year.$error">
+                            <div ng-message="required">Year is required</div>
+                        </div>
+                    </md-input-container>
+                    <div flex="5"></div>
+                    <split-select split="vm.session.split"
+                                  on-select="vm.selectSplit($event)">
+                    </split-select>
+                </div>
+                <md-button type="submit" class="md-raised md-primary" ng-disabled="sessionForm.$invalid">Save</md-button>
+
+            </form>
+
+        </md-content>
+    </md-card-content>
+</md-card>

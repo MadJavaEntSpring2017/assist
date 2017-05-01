@@ -18,7 +18,26 @@
             }
         };
 
+        var sessionDetailState = {
+            name: 'main.session-details',
+            url: '/sessions/:sessionId/details',
+            component: 'session',
+            resolve: {
+                session: function (sessionService, $stateParams) {
+                    return sessionService.getSessionDetails($stateParams.sessionId);
+                }
+            }
+        };
+
+        var sessionAddState = {
+            name: 'main.sessions-add',
+            url: '/sessions/add',
+            component: 'session'
+        };
+
         $stateProvider
-            .state(sessionListState);
+            .state(sessionListState)
+            .state(sessionDetailState)
+            .state(sessionAddState);
     }
 })();

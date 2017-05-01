@@ -32,7 +32,7 @@ public class SessionMapper {
 
     public void mapEntityToDetail(Session session, SessionDetail sessionDetail) {
         mappingUtils.copyProperties(session, sessionDetail);
-        sessionDetail.setSeasonName(session.getSeason().getName());
-        sessionDetail.setSplitName(session.getSplit().getName());
+        session.getSeason().getName();
+        session.getSplit().getName();
     }
 }

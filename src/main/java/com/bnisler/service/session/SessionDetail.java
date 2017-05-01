@@ -1,5 +1,7 @@
 package com.bnisler.service.session;
 
+import com.bnisler.entity.Season;
+import com.bnisler.entity.Split;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +10,6 @@ import lombok.Setter;
 public class SessionDetail {
     private Long id;
     private Integer year;
-    private String splitName;
-    private String seasonName;
+    private Split split;
+    private Season season;
 }
