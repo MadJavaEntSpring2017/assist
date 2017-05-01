@@ -2,10 +2,13 @@
     <label>Season</label>
     <md-select ng-model="vm.season"
                ng-model-options="{trackBy: '$value.id'}"
-               md-on-close="vm.selectSeason()">
-        <md-option ng-value="null">None</md-option>
+               md-on-close="vm.selectSeason()"
+               required>
         <md-option ng-repeat="season in vm.seasons" ng-value="season">
             {{season.name}}
         </md-option>
     </md-select>
+    <div ng-messages="sessionForm.season.$error">
+        <div ng-message="required">Season is required</div>
+    </div>
 </md-input-container>

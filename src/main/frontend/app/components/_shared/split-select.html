@@ -2,10 +2,13 @@
     <label>Split</label>
     <md-select ng-model="vm.split"
                ng-model-options="{trackBy: '$value.id'}"
-               md-on-close="vm.selectSplit()">
-        <md-option ng-value="null">None</md-option>
+               md-on-close="vm.selectSplit()"
+               required>
         <md-option ng-repeat="split in vm.splits" ng-value="split">
             {{split.name}}
         </md-option>
     </md-select>
+    <div ng-messages="sessionForm.split.$error">
+        <div ng-message="required">Split is required</div>
+    </div>
 </md-input-container>

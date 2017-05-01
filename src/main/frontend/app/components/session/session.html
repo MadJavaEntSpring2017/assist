@@ -20,9 +20,11 @@
                         <input ng-model="vm.session.year"
                                name="year"
                                required
+                               minlength="4"
                                type="text" />
                         <div ng-messages="sessionForm.year.$error">
                             <div ng-message="required">Year is required</div>
+                            <div ng-message="minlength">Must be valid year format (####)</div>
                         </div>
                     </md-input-container>
                     <div flex="5"></div>
