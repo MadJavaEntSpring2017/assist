@@ -1,6 +1,8 @@
 package com.bnisler.controller;
 
 import com.bnisler.entity.Team;
+import com.bnisler.service.roster.RosterDetail;
+import com.bnisler.service.roster.RosterService;
 import com.bnisler.service.team.TeamService;
 import com.bnisler.service.team.TeamWriteRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,9 @@ public class TeamController {
 
     @Autowired
     private TeamService teamService;
+
+    @Autowired
+    private RosterService rosterService;
 
     @RequestMapping(value = "/teams", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
     public List<Team> getAllTeams() {
@@ -36,5 +41,10 @@ public class TeamController {
                            @RequestBody TeamWriteRequest writeRequest) {
         teamService.updateTeam(teamId, writeRequest);
         return teamService.findTeamById(teamId);
+    }
+
+    @RequestMapping(value = "/teams/{teamId}/rosters", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+    public List<RosterDetail> getAllRosterDetailsByTeamId(@PathVariable ("teamId") Long teamId) {
+        return rosterService.getAllRosterDetailsByTeamId(teamId);
     }
 }

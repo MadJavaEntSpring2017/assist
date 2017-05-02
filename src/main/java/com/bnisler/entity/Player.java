@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -30,6 +32,16 @@ public class Player {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
     private Team team;
+
+    @OneToMany(mappedBy = "player", fetch = FetchType.LAZY)
+    private List<Commit> commits;
+
+    public List<Commit> getCommits() {
+        if (commits == null) {
+            commits = new ArrayList<>();
+        }
+        return commits;
+    }
 
     @Override
     public String toString() {

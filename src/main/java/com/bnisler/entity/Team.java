@@ -33,11 +33,21 @@ public class Team {
     @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     private List<Player> players;
 
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+    private List<Roster> rosters;
+
     public List<Player> getPlayers() {
         if (players == null) {
             players = new ArrayList<>();
         }
         return players;
+    }
+
+    public List<Roster> getRosters() {
+        if (rosters == null) {
+            rosters = new ArrayList<>();
+        }
+        return rosters;
     }
 
     // TODO: uncomment this when security implemented

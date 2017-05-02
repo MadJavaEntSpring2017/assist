@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,41 +12,38 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "session")
+@Table(name = "roster")
 @NoArgsConstructor
-public class Session {
+public class Roster {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer year;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    private Team team;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
-    private Split split;
+    private Session session;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonBackReference
-    private Season season;
+    @OneToMany(mappedBy = "roster", fetch = FetchType.LAZY)
+    private List<Commit> commits;
 
-    @OneToMany(mappedBy = "session", fetch = FetchType.LAZY)
-    private List<Roster> rosters;
-
-    public List<Roster> getRosters() {
-        if (rosters == null) {
-            rosters = new ArrayList<>();
+    public List<Commit> getCommits() {
+        if (commits == null) {
+            commits = new ArrayList<>();
         }
-        return rosters;
+        return commits;
     }
 
     @Override
     public String toString() {
-        return "Session{" +
+        return "Roster{" +
                 "id=" + id +
-                ", year=" + year +
-                ", split=" + split +
-                ", season=" + season +
+                ", team=" + team +
+                ", session=" + session +
                 '}';
     }
 }
