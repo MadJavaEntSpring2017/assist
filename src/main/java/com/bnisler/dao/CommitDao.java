@@ -23,8 +23,24 @@ public class CommitDao extends AbstractDao<Long, Commit> {
         return save(commit);
     }
 
+    public void saveAllCommits(List<Commit> commits) {
+        if (commits != null && commits.size() > 0) {
+            for (Commit commit : commits) {
+                saveCommit(commit);
+            }
+        }
+    }
+
     public void deleteCommit(Commit commit) {
         delete(commit);
+    }
+
+    public void deleteAll(List<Commit> commits) {
+        if (commits != null && commits.size() > 0) {
+            for (Commit commit : commits) {
+                deleteCommit(commit);
+            }
+        }
     }
 
     public void updateCommit(Commit commit) {

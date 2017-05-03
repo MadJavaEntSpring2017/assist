@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommitDaoTest extends BaseDaoTest {
@@ -28,9 +29,11 @@ public class CommitDaoTest extends BaseDaoTest {
     private RosterDao rosterDao;
 
     private Commit commit;
+    private List<Commit> commits;
 
     @Before
     public void setup() {
+        // create new commit
         Commit commit = new Commit();
         Long playerId = 4L;
         Player player = playerDao.findById(playerId);
@@ -39,6 +42,27 @@ public class CommitDaoTest extends BaseDaoTest {
         commit.setPlayer(player);
         commit.setRoster(roster);
         this.commit = commit;
+
+        // create other commits for list
+        List<Commit> commits = new ArrayList<>();
+
+        Commit commit1 = new Commit();
+        Long playerId1 = 3L;
+        Player player1 = playerDao.findById(playerId1);
+        commit1.setPlayer(player1);
+        commit1.setRoster(roster);
+
+        Commit commit2 = new Commit();
+        Long playerId2 = 2L;
+        Player player2 = playerDao.findById(playerId2);
+        commit2.setPlayer(player2);
+        commit2.setRoster(roster);
+
+        // create commit list
+        commits.add(commit);
+        commits.add(commit1);
+        commits.add(commit2);
+        this.commits = commits;
     }
 
     @Test
@@ -74,5 +98,26 @@ public class CommitDaoTest extends BaseDaoTest {
         Assert.assertTrue("Wrong commit id", savedCommit.getId().equals(commitId));
         Assert.assertTrue("Wrong player", savedCommit.getPlayer().equals(commit.getPlayer()));
         Assert.assertTrue("Wrong roster", savedCommit.getRoster().equals(commit.getRoster()));
+    }
+
+    @Test
+    public void testDeleteAllCommits() {
+        for (Commit commit : commits) {
+            commitDao.saveCommit(commit);
+        }
+        LOG.info("~~~~~~~~~~~SIZE: " + commits.size());
+        Assert.assertNotNull("Couldn't save commits", commits);
+        Assert.assertTrue("Commit list doesn't contain commits", commits.size() > 0);
+
+        Long commitId = commits.get(0).getId();
+        Commit commitBeforeDelete = commitDao.findCommitById(commitId);
+        LOG.info("~~~~~~~~~~~COMMIT BEFORE: " + commitBeforeDelete);
+        Assert.assertNotNull("Couldn't pull back commit", commitBeforeDelete);
+
+        commitDao.deleteAll(commits);
+
+        Commit commitAfterDelete = commitDao.findCommitById(commitId);
+        LOG.info("~~~~~~~~~~~COMMIT AFTER: " + commitAfterDelete);
+        Assert.assertNull("Couldn't delete commit", commitAfterDelete);
     }
 }

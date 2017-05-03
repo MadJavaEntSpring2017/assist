@@ -38,6 +38,19 @@ public class Roster {
         return commits;
     }
 
+    public void removeCommits(List<Commit> commits) {
+        if (this.commits != null && this.commits.size() > 0) {
+            this.commits.removeAll(commits);
+        }
+    }
+
+    public void addCommit(Commit commit) {
+        if (this.commits == null) {
+            this.commits = new ArrayList<>();
+        }
+        this.commits.add(commit);
+    }
+
     @Override
     public String toString() {
         return "Roster{" +
