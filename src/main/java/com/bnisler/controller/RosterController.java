@@ -31,6 +31,13 @@ public class RosterController {
         return rosterService.getRosterDetails(rosterId);
     }
 
+    @RequestMapping(value = "/rosters/{rosterId}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON)
+    public RosterDetail updateRoster(@PathVariable ("rosterId") Long rosterId,
+                                     @RequestBody RosterWriteRequest writeRequest) {
+        rosterService.updateRoster(rosterId, writeRequest);
+        return rosterService.getRosterDetails(rosterId);
+    }
+
     @RequestMapping(value = "/rosters", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON)
     public RosterDetail createRoster(@RequestBody RosterWriteRequest writeRequest) {
         Long rosterId = rosterService.createRoster(writeRequest);

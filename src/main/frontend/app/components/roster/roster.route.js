@@ -29,8 +29,15 @@
             }
         };
 
+        var rosterAddState = {
+            name: 'main.rosters-add',
+            url: '/rosters/add',
+            component: 'roster'
+        };
+
         $stateProvider
             .state(rosterListState)
-            .state(rosterDetailState);
+            .state(rosterDetailState)
+            .state(rosterAddState);
     }
 })();

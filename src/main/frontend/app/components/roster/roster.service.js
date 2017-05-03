@@ -11,8 +11,18 @@
             getAllRosters: getAllRosters,
             getRostersByTeam: getRostersByTeam,
             getRostersBySession: getRostersBySession,
-            getRosterDetails: getRosterDetails
+            getRosterDetails: getRosterDetails,
+            createRoster: createRoster,
+            updateRoster: updateRoster
         };
+
+        function updateRoster(rosterId, writeRequest) {
+            return apiService.put('/rosters/' + rosterId, writeRequest);
+        }
+
+        function createRoster(writeRequest) {
+            return apiService.post('/rosters', writeRequest);
+        }
 
         function getRosterDetails(rosterId) {
             return apiService.get('/rosters/' + rosterId + '/details');

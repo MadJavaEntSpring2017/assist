@@ -12,9 +12,9 @@
             require: {}
         });
 
-    RosterController.$inject = ['$q', 'teamService', 'sessionService'];
+    RosterController.$inject = ['$q', 'teamService', 'sessionService', 'rosterService', 'messageService', '$state'];
 
-    function RosterController($q, teamService, sessionService) {
+    function RosterController($q, teamService, sessionService, rosterService, messageService, $state) {
         var vm = this;
 
         vm.save = save;
@@ -22,25 +22,48 @@
         vm.selectSession = selectSession;
 
         function selectSession(event) {
-            vm.roster.session = event.session;
+            vm.session = event.session;
         }
 
         function selectTeam(event) {
-            vm.roster.team = event.team;
-        }
-
-        function save() {
-            console.log('saving roster...'); // todo delete
+            vm.team = event.team;
         }
 
         vm.$onInit = function () {
+            vm.roster = vm.roster ? vm.roster : {};
             $q.all({
-                team: vm.roster ? teamService.getTeam(vm.roster.teamId) : {},
-                session: vm.roster ? sessionService.getSessionDetails(vm.roster.sessionId) : {}
+                team: vm.roster.teamId ? teamService.getTeam(vm.roster.teamId) : {},
+                session: vm.roster.sessionId ? sessionService.getSessionDetails(vm.roster.sessionId) : {}
             }).then(function (results) {
                 vm.team = results.team;
                 vm.session = results.session;
             });
         };
+
+        function save() {
+            var writeRequest = createWriteRequest();
+
+            var savePromise;
+            if (vm.roster && vm.roster.id) {
+                savePromise = rosterService.updateRoster(vm.roster.id, writeRequest);
+            } else {
+                savePromise = rosterService.createRoster(writeRequest);
+            }
+
+            savePromise
+                .then(function (results) {
+                    messageService.showSuccessMessage();
+                    $state.go('main.roster-details', { rosterId: results.id });
+                }).catch(function () {
+                    messageService.showErrorMessage();
+                });
+        }
+
+        function createWriteRequest() {
+            return {
+                sessionId: vm.session.id,
+                teamId: vm.team.id
+            };
+        }
     }
 })();

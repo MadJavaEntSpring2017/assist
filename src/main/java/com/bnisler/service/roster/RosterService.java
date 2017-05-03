@@ -39,6 +39,10 @@ public class RosterService {
         return rosterDetails;
     }
 
+    public Roster getRosterById(Long rosterId) {
+        return rosterDao.findRosterById(rosterId);
+    }
+
     public RosterDetail getRosterDetails(Long rosterId) {
         Roster roster = rosterDao.findRosterById(rosterId);
         RosterDetail rosterDetail = new RosterDetail();
@@ -73,5 +77,12 @@ public class RosterService {
         Roster roster = new Roster();
         rosterMapper.mapToEntity(writeRequest, roster);
         return rosterDao.saveRoster(roster);
+    }
+
+    @Transactional
+    public void updateRoster(Long rosterId, RosterWriteRequest writeRequest) {
+        Roster roster = rosterDao.findRosterById(rosterId);
+        rosterMapper.mapToEntity(writeRequest, roster);
+        rosterDao.updateRoster(roster);
     }
 }
