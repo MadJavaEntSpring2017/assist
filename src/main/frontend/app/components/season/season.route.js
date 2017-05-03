@@ -25,6 +25,9 @@
             resolve: {
                 season: function (seasonService, $stateParams) {
                     return seasonService.getSeasonDetails($stateParams.seasonId);
+                },
+                sessions: function (sessionService, $stateParams) {
+                    return sessionService.getAllSessionDetailsBySeason($stateParams.seasonId);
                 }
             }
         };

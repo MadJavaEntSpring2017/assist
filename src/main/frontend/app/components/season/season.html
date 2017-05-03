@@ -36,6 +36,6 @@
     </md-card-content>
 </md-card>
 
-<season-session-list ng-if="vm.season.sessions"
-                     sessions="vm.season.sessions">
-</season-session-list>
+<session-list ng-if="vm.season.id"
+              sessions="vm.sessions">
+</session-list>

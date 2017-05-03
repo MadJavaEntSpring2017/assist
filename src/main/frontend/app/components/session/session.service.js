@@ -11,8 +11,13 @@
             getAllSessions: getAllSessions,
             getSessionDetails: getSessionDetails,
             createSession: createSession,
-            updateSession: updateSession
+            updateSession: updateSession,
+            getAllSessionDetailsBySeason: getAllSessionDetailsBySeason
         };
+
+        function getAllSessionDetailsBySeason(seasonId) {
+            return apiService.get('/seasons/' + seasonId + '/sessions');
+        }
 
         function getAllSessions() {
             return apiService.get('/sessions');

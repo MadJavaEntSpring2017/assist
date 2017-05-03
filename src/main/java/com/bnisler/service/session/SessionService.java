@@ -1,6 +1,8 @@
 package com.bnisler.service.session;
 
+import com.bnisler.dao.SeasonDao;
 import com.bnisler.dao.SessionDao;
+import com.bnisler.entity.Season;
 import com.bnisler.entity.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,9 @@ public class SessionService {
 
     @Autowired
     private SessionDao sessionDao;
+
+    @Autowired
+    private SeasonDao seasonDao;
 
     @Autowired
     private SessionMapper sessionMapper;
@@ -52,5 +57,16 @@ public class SessionService {
         Session session = sessionDao.findSessionById(sessionId);
         sessionMapper.mapToEntity(writeRequest, session);
         sessionDao.updateSession(session);
+    }
+
+    public List<SessionDetail> getAllSessionDetailsBySeasonId(Long seasonId) {
+        Season season = seasonDao.findSeasonById(seasonId);
+        List<SessionDetail> sessionDetails = new ArrayList<>();
+        for (Session session : season.getSessions()) {
+            SessionDetail sessionDetail = new SessionDetail();
+            sessionMapper.mapEntityToDetail(session, sessionDetail);
+            sessionDetails.add(sessionDetail);
+        }
+        return sessionDetails;
     }
 }

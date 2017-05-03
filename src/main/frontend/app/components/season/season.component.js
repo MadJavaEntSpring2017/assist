@@ -7,7 +7,8 @@
             controllerAs: 'vm',
             templateUrl: 'components/season/season.html',
             bindings: {
-                season: '<'
+                season: '<',
+                sessions: '<'
             },
             require: {}
         });
@@ -22,6 +23,7 @@
         vm.$onInit = function () {
             vm.season = vm.season ? vm.season : {};
             vm.season.active = vm.season.active ? vm.season.active : false;
+            vm.sessions = vm.sessions ? vm.sessions : {};
         };
 
         function save() {
