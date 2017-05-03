@@ -7,7 +7,8 @@
             controllerAs: 'vm',
             templateUrl: 'components/team/team.html',
             bindings: {
-                team: '<'
+                team: '<',
+                rosters: '<'
             },
             require: {}
         });
@@ -21,6 +22,7 @@
 
         vm.$onInit = function () {
             vm.team = vm.team ? vm.team : {};
+            vm.rosters = vm.rosters ? vm.rosters : {};
         };
 
         function save() {

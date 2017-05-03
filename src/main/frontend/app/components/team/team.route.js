@@ -25,6 +25,9 @@
             resolve: {
                 team: function (teamService, $stateParams) {
                     return teamService.getTeam($stateParams.teamId);
+                },
+                rosters: function (rosterService, $stateParams) {
+                    return rosterService.getRostersByTeam($stateParams.teamId);
                 }
             }
         };

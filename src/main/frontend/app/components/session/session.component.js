@@ -7,7 +7,8 @@
             controllerAs: 'vm',
             templateUrl: 'components/session/session.html',
             bindings: {
-                session: '<'
+                session: '<',
+                rosters: '<'
             },
             require: {}
         });
@@ -23,6 +24,7 @@
 
         vm.$onInit = function () {
             vm.session = vm.session ? vm.session : {};
+            vm.rosters = vm.rosters ? vm.rosters : {};
         };
 
         function selectSeason(event) {

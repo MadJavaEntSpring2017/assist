@@ -25,6 +25,9 @@
             resolve: {
                 session: function (sessionService, $stateParams) {
                     return sessionService.getSessionDetails($stateParams.sessionId);
+                },
+                rosters: function (rosterService, $stateParams) {
+                    return rosterService.getRostersBySession($stateParams.sessionId);
                 }
             }
         };
