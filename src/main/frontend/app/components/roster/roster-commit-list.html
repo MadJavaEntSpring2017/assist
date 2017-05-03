@@ -1,0 +1,33 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Commits</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <md-content>
+            <table st-table="displayCommits"
+                   st-safe-src="vm.commits"
+                   class="table table-striped">
+                <thead>
+                <tr>
+                    <th st-sort="firstname">Firstname</th>
+                    <th st-sort="lastname">Lastname</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="commit in displayCommits">
+                    <td>
+                        <a ui-sref="main.player-details({ playerId:commit.playerId })">
+                            {{commit.firstname}}
+                        </a>
+                    </td>
+                    <td>{{commit.lastname}}</td>
+                    <td>{{commit.email}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </md-content>
+    </md-card-content>
+</md-card>

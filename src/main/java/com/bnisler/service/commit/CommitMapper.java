@@ -17,7 +17,7 @@ public class CommitMapper {
     public void mapEntityToDetail(Commit commit, CommitDetail commitDetail) {
         mappingUtils.copyProperties(commit, commitDetail);
         commitDetail.setPlayerId(commit.getPlayer().getId());
-        commitDetail.setFirtname(commit.getPlayer().getFirstname());
+        commitDetail.setFirstname(commit.getPlayer().getFirstname());
         commitDetail.setLastname(commit.getPlayer().getLastname());
         commitDetail.setEmail(commit.getPlayer().getEmail());
     }

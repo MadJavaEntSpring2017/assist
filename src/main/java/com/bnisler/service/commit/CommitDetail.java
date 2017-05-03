@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 public class CommitDetail {
     private Long playerId;
-    private String firtname;
+    private String firstname;
     private String lastname;
     private String email;
 }

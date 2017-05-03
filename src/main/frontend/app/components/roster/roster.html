@@ -1,0 +1,32 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Roster</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <md-content layout-padding>
+
+            <form name="rosterForm" ng-submit="vm.save()" novalidate>
+
+                <div layout="row" layout-xs="column">
+                    <team-select team="vm.team"
+                                 on-select="vm.selectTeam($event)"
+                                 required="required">
+                    </team-select>
+                    <div flex="5"></div>
+                    <session-select session="vm.session"
+                                    on-select="vm.selectSession($event)"
+                                    required="required">
+                    </session-select>
+                </div>
+
+            </form>
+
+        </md-content>
+    </md-card-content>
+</md-card>
+
+<roster-commit-list ng-if="vm.roster.commits"
+                    commits="vm.roster.commits">
+</roster-commit-list>

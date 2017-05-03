@@ -11,7 +11,8 @@
 
                 <div layout-xs="column" layout="row">
                     <season-select season="vm.session.season"
-                                   on-select="vm.selectSeason($event)">
+                                   on-select="vm.selectSeason($event)"
+                                   required="required">
                     </season-select>
                 </div>
                 <div layout="row" layout-xs="column">
@@ -29,7 +30,8 @@
                     </md-input-container>
                     <div flex="5"></div>
                     <split-select split="vm.session.split"
-                                  on-select="vm.selectSplit($event)">
+                                  on-select="vm.selectSplit($event)"
+                                  required="required">
                     </split-select>
                 </div>
                 <md-button type="submit" class="md-raised md-primary" ng-disabled="sessionForm.$invalid">Save</md-button>

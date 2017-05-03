@@ -1,0 +1,26 @@
+<md-input-container ng-if="vm.required">
+    <label>Session</label>
+    <md-select ng-model="vm.session"
+               ng-model-options="{trackBy: '$value.id'}"
+               md-on-close="vm.selectSession()"
+               required>
+        <md-option ng-repeat="session in vm.sessions" ng-value="session">
+            {{session.year}} {{session.split.name}}
+        </md-option>
+    </md-select>
+    <div ng-messages="vm.form.session.$error">
+        <div ng-message="required">Session is required</div>
+    </div>
+</md-input-container>
+
+<md-input-container ng-if="!vm.required">
+    <label>Session</label>
+    <md-select ng-model="vm.session"
+               ng-model-options="{trackBy: '$value.id'}"
+               md-on-close="vm.selectSession()">
+        <md-option ng-value="null">None</md-option>
+        <md-option ng-repeat="session in vm.sessions" ng-value="session">
+            {{session.year}} {{session.split.name}}
+        </md-option>
+    </md-select>
+</md-input-container>

@@ -8,9 +8,12 @@
             templateUrl: 'components/_shared/season-select.html',
             bindings: {
                 season: '<',
-                onSelect: '&'
+                onSelect: '&',
+                required: '@'
             },
-            require: {}
+            require: {
+                form: '^form'
+            }
         });
 
     SeasonSelectController.$inject = ['$q', 'seasonService'];

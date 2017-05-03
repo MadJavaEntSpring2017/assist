@@ -6,10 +6,13 @@
             controller: TeamSelectController,
             controllerAs: 'vm',
             templateUrl: 'components/_shared/team-select.html',
-            require: {},
+            require: {
+                form: '^form'
+            },
             bindings: {
                 team: '<',
-                onSelect: '&'
+                onSelect: '&',
+                required: '@'
             }
         });
 

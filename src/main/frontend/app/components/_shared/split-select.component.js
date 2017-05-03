@@ -8,9 +8,12 @@
             templateUrl: 'components/_shared/split-select.html',
             bindings: {
                 split: '<',
-                onSelect: '&'
+                onSelect: '&',
+                required: '@'
             },
-            require: {}
+            require: {
+                form: '^form'
+            }
         });
 
     SplitSelectController.$inject = ['$q', 'splitService'];
