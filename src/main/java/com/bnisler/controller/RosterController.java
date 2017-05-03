@@ -1,6 +1,7 @@
 package com.bnisler.controller;
 
 import com.bnisler.entity.Roster;
+import com.bnisler.service.commit.CommitDetail;
 import com.bnisler.service.commit.CommitService;
 import com.bnisler.service.commit.CommitWriteRequest;
 import com.bnisler.service.roster.RosterDetail;
@@ -49,5 +50,10 @@ public class RosterController {
                               @RequestBody CommitWriteRequest writeRequest) {
         commitService.createRosterCommits(rosterId, writeRequest);
         return rosterId;
+    }
+
+    @RequestMapping(value = "/rosters/{rosterId}/commits", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+    public List<CommitDetail> getAllCommitDetailsByRosterId(@PathVariable ("rosterId") Long rosterId) {
+        return commitService.getAllCommitDetailsByRosterId(rosterId);
     }
 }

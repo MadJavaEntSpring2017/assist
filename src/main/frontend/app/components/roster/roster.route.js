@@ -25,6 +25,9 @@
             resolve: {
                 roster: function (rosterService, $stateParams) {
                     return rosterService.getRosterDetails($stateParams.rosterId);
+                },
+                commits: function (commitService, $stateParams) {
+                    return commitService.getCommitsByRoster($stateParams.rosterId);
                 }
             }
         };

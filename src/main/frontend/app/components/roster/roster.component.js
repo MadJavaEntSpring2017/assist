@@ -7,7 +7,8 @@
             controllerAs: 'vm',
             templateUrl: 'components/roster/roster.html',
             bindings: {
-                roster: '<'
+                roster: '<',
+                commits: '<'
             },
             require: {}
         });
@@ -31,6 +32,7 @@
 
         vm.$onInit = function () {
             vm.roster = vm.roster ? vm.roster : {};
+            vm.commits = vm.commits ? vm.commits : {};
             $q.all({
                 team: vm.roster.teamId ? teamService.getTeam(vm.roster.teamId) : {},
                 session: vm.roster.sessionId ? sessionService.getSessionDetails(vm.roster.sessionId) : {}

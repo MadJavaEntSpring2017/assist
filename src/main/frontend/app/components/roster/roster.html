@@ -28,6 +28,6 @@
     </md-card-content>
 </md-card>
 
-<roster-commit-list ng-if="vm.roster.commits"
-                    commits="vm.roster.commits">
-</roster-commit-list>
+<commit-list ng-if="vm.roster.id"
+             commits="vm.commits">
+</commit-list>

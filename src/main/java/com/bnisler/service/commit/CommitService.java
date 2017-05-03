@@ -60,4 +60,15 @@ public class CommitService {
         //save all the commits
         commitDao.saveAllCommits(roster.getCommits()); // todo : will i be ok if save is within loop within transaction?
     }
+
+    public List<CommitDetail> getAllCommitDetailsByRosterId(Long rosterId) {
+        Roster roster = rosterDao.findRosterById(rosterId);
+        List<CommitDetail> commitDetails = new ArrayList<>();
+        for (Commit commit : roster.getCommits()) {
+            CommitDetail commitDetail = new CommitDetail();
+            commitMapper.mapEntityToDetail(commit, commitDetail);
+            commitDetails.add(commitDetail);
+        }
+        return commitDetails;
+    }
 }
