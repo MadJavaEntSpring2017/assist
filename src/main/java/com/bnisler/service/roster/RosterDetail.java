@@ -2,6 +2,7 @@ package com.bnisler.service.roster;
 
 import com.bnisler.entity.Commit;
 import com.bnisler.entity.Player;
+import com.bnisler.service.commit.CommitDetail;
 import com.bnisler.service.player.PlayerDetail;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,5 +19,5 @@ public class RosterDetail {
     private Integer sessionYear;
     private String splitName;
     private String seasonName;
-    private List<PlayerDetail> players;
+    private List<CommitDetail> commits;
 }
