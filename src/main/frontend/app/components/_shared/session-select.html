@@ -2,7 +2,7 @@
     <label>Session</label>
     <md-select ng-model="vm.session"
                ng-model-options="{trackBy: '$value.id'}"
-               md-on-close="vm.selectSession()"
+               ng-change="vm.selectSession()"
                required>
         <md-option ng-repeat="session in vm.sessions" ng-value="session">
             {{session.year}} {{session.split.name}}
@@ -17,7 +17,7 @@
     <label>Session</label>
     <md-select ng-model="vm.session"
                ng-model-options="{trackBy: '$value.id'}"
-               md-on-close="vm.selectSession()">
+               ng-change="vm.selectSession()">
         <md-option ng-value="null">None</md-option>
         <md-option ng-repeat="session in vm.sessions" ng-value="session">
             {{session.year}} {{session.split.name}}

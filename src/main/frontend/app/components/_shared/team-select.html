@@ -2,7 +2,7 @@
     <label>Team</label>
     <md-select ng-model="vm.team"
                ng-model-options="{trackBy: '$value.id'}"
-               md-on-close="vm.selectTeam()"
+               ng-change="vm.selectTeam()"
                required>
         <md-option ng-repeat="team in vm.teams" ng-value="team">
             {{team.name}}
@@ -17,7 +17,7 @@
     <label>Team</label>
     <md-select ng-model="vm.team"
                ng-model-options="{trackBy: '$value.id'}"
-               md-on-close="vm.selectTeam()">
+               ng-change="vm.selectTeam()">
         <md-option ng-value="null">None</md-option>
         <md-option ng-repeat="team in vm.teams" ng-value="team">
             {{team.name}}
