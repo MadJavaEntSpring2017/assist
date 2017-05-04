@@ -5,7 +5,8 @@
         </md-card-title-text>
         <md-button class="md-raised md-primary md-icon-button"
                    aria-label="add session"
-                   ui-sref="main.sessions-add">
+                   ui-sref="main.season-sessions-add({ seasonId:vm.seasonId })"
+                   ng-if="vm.seasonId">
             <md-icon md-font-set="material-icons">add</md-icon>
         </md-button>
     </md-card-title>

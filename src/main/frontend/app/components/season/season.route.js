@@ -38,9 +38,16 @@
             component: 'season'
         };
 
+        var seasonSessionAddState = {
+            name: 'main.season-sessions-add',
+            url: '/seasons/:seasonId/sessions',
+            component: 'session'
+        };
+
         $stateProvider
             .state(seasonListState)
             .state(seasonDetailState)
-            .state(seasonAddState);
+            .state(seasonAddState)
+            .state(seasonSessionAddState);
     }
 })();

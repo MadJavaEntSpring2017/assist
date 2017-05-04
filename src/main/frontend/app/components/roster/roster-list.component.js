@@ -12,12 +12,17 @@
             require: {}
         });
 
-    RosterListController.$inject = ['$state'];
+    RosterListController.$inject = ['$state', '$stateParams'];
 
-    function RosterListController($state) {
+    function RosterListController($state, $stateParams) {
         var vm = this;
 
         vm.edit = edit;
+
+        vm.$onInit = function () {
+            vm.teamId = $stateParams.teamId;
+            vm.sessionId = $stateParams.sessionId;
+        };
 
         function edit(roster) {
             $state.go('main.roster-details', { rosterId: roster.id });

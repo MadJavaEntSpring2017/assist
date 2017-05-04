@@ -12,12 +12,16 @@
             require: {}
         });
 
-    SessionListController.$inject = ['$state'];
+    SessionListController.$inject = ['$state', '$stateParams'];
 
-    function SessionListController($state) {
+    function SessionListController($state, $stateParams) {
         var vm = this;
 
         vm.edit = edit;
+
+        vm.$onInit = function () {
+            vm.seasonId = $stateParams.seasonId;
+        };
 
         function edit(session) {
             $state.go('main.session-details', { sessionId: session.id });

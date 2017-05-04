@@ -1,7 +1,7 @@
 <md-card>
     <md-card-title>
         <md-card-title-text>
-            <span class="md-headline" ng-if="vm.session">Session</span>
+            <span class="md-headline">Session</span>
         </md-card-title-text>
     </md-card-title>
     <md-card-content>
@@ -10,7 +10,7 @@
             <form name="sessionForm" ng-submit="vm.save()" novalidate>
 
                 <div layout-xs="column" layout="row">
-                    <season-select season="vm.session.season"
+                    <season-select season="vm.season"
                                    on-select="vm.selectSeason($event)"
                                    required="required">
                     </season-select>

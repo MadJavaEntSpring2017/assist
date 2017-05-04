@@ -13,9 +13,11 @@
             require: {}
         });
 
-    RosterController.$inject = ['$q', 'teamService', 'sessionService', 'rosterService', 'messageService', '$state'];
+    RosterController.$inject = ['$q', 'teamService', 'sessionService', 'rosterService', 'messageService', '$state',
+                                '$stateParams'];
 
-    function RosterController($q, teamService, sessionService, rosterService, messageService, $state) {
+    function RosterController($q, teamService, sessionService, rosterService, messageService, $state,
+                              $stateParams) {
         var vm = this;
 
         vm.save = save;
@@ -33,9 +35,11 @@
         vm.$onInit = function () {
             vm.roster = vm.roster ? vm.roster : {};
             vm.commits = vm.commits ? vm.commits : {};
+            vm.teamId = $stateParams.teamId ? $stateParams.teamId : vm.roster.teamId;
+            vm.sessionId = $stateParams.sessionId ? $stateParams.sessionId : vm.roster.sessionId;
             $q.all({
-                team: vm.roster.teamId ? teamService.getTeam(vm.roster.teamId) : {},
-                session: vm.roster.sessionId ? sessionService.getSessionDetails(vm.roster.sessionId) : {}
+                team: vm.teamId ? teamService.getTeam(vm.teamId) : {},
+                session: vm.sessionId ? sessionService.getSessionDetails(vm.sessionId) : {}
             }).then(function (results) {
                 vm.team = results.team;
                 vm.session = results.session;

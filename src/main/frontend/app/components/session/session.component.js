@@ -13,9 +13,9 @@
             require: {}
         });
 
-    SessionController.$inject = ['sessionService', 'messageService', '$state'];
+    SessionController.$inject = ['$q', 'seasonService', 'sessionService', 'messageService', '$state', '$stateParams'];
 
-    function SessionController(sessionService, messageService, $state) {
+    function SessionController($q, seasonService, sessionService, messageService, $state, $stateParams) {
         var vm = this;
 
         vm.save = save;
@@ -24,15 +24,22 @@
 
         vm.$onInit = function () {
             vm.session = vm.session ? vm.session : {};
+            vm.split = vm.session.split ? vm.session.split : {};
             vm.rosters = vm.rosters ? vm.rosters : {};
+            vm.seasonId = $stateParams.seasonId ? $stateParams.seasonId : vm.session.season.id;
+            $q.all({
+                season: vm.seasonId ? seasonService.getSeasonDetails(vm.seasonId) : {}
+            }).then(function (results) {
+                vm.season = results.season;
+            })
         };
 
         function selectSeason(event) {
-            vm.session.season = event.season;
+            vm.season = event.season;
         }
 
         function selectSplit(event) {
-            vm.session.split = event.split;
+            vm.split = event.split;
         }
 
         function save() {
@@ -57,8 +64,8 @@
         function createWriteRequest() {
             return {
                 year: vm.session.year,
-                seasonId: vm.session.season.id,
-                splitId: vm.session.split.id
+                seasonId: vm.season.id,
+                splitId: vm.split.id
             };
         }
     }

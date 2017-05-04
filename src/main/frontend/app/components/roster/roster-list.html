@@ -5,7 +5,14 @@
         </md-card-title-text>
         <md-button class="md-raised md-primary md-icon-button"
                    aria-label="add roster"
-                   ui-sref="main.rosters-add">
+                   ui-sref="main.team-rosters-add({ teamId:vm.teamId })"
+                   ng-if="vm.teamId">
+            <md-icon md-font-set="material-icons">add</md-icon>
+        </md-button>
+        <md-button class="md-raised md-primary md-icon-button"
+                   aria-label="add roster"
+                   ui-sref="main.session-rosters-add({ sessionId:vm.sessionId })"
+                   ng-if="vm.sessionId">
             <md-icon md-font-set="material-icons">add</md-icon>
         </md-button>
     </md-card-title>

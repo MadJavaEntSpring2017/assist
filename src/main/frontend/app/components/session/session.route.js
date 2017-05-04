@@ -38,9 +38,16 @@
             component: 'session'
         };
 
+        var sessionRosterAddState = {
+            name: 'main.session-rosters-add',
+            url: '/session/:sessionId/rosters',
+            component: 'roster'
+        };
+
         $stateProvider
             .state(sessionListState)
             .state(sessionDetailState)
-            .state(sessionAddState);
+            .state(sessionAddState)
+            .state(sessionRosterAddState);
     }
 })();

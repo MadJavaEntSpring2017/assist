@@ -38,9 +38,16 @@
             component: 'team'
         };
 
+        var teamRosterAddState = {
+            name: 'main.team-rosters-add',
+            url: '/teams/:teamId/rosters',
+            component: 'roster'
+        };
+
         $stateProvider
             .state(teamListState)
             .state(teamState)
-            .state(teamAddState);
+            .state(teamAddState)
+            .state(teamRosterAddState);
     }
 })();
