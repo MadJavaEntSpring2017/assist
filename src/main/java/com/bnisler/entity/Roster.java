@@ -44,6 +44,10 @@ public class Roster {
         }
     }
 
+    public void removeAllCommits() {
+        this.commits.clear();
+    }
+
     public void addCommit(Commit commit) {
         if (this.commits == null) {
             this.commits = new ArrayList<>();

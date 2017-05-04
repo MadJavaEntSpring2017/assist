@@ -77,7 +77,7 @@ public class CommitDaoTest extends BaseDaoTest {
 
     @Test
     public void testFindCommitById() {
-        Long commitId = 1L;
+        Long commitId = 2L;
         Commit commit = null;
         commit = commitDao.findCommitById(commitId);
 

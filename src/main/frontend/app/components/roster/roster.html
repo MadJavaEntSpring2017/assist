@@ -29,5 +29,6 @@
 </md-card>
 
 <commit-list ng-if="vm.roster.id"
-             commits="vm.commits">
+             commits="vm.commits"
+             on-update="vm.updateCommits($event)">
 </commit-list>

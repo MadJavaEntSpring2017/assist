@@ -23,6 +23,12 @@
         vm.save = save;
         vm.selectTeam = selectTeam;
         vm.selectSession = selectSession;
+        vm.updateCommits = updateCommits;
+
+        function updateCommits(event) {
+            vm.roster.commits = event.commits;
+            vm.commits = vm.roster.commits;
+        }
 
         function selectSession(event) {
             vm.session = event.session;

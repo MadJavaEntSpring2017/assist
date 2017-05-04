@@ -40,25 +40,25 @@ public class CommitService {
     }
 
     @Transactional
+    public void deleteRosterCommits(Long rosterId) {
+        Roster roster = rosterDao.findRosterById(rosterId);
+        commitDao.deleteAll(roster.getCommits());
+        roster.removeAllCommits();
+        // todo : do i need to explicitly call .deleteAll()? if so, do i then need .removeAllCommits()?
+    }
+
+    @Transactional
     public void createRosterCommits(Long rosterId, CommitWriteRequest writeRequest) {
         Roster roster = rosterDao.findRosterById(rosterId);
-        List<Commit> commits = roster.getCommits();
-
-        //remove preexisting commits from db and roster entity
-        commitDao.deleteAll(commits);
-        roster.removeCommits(commits);
-
-        //add commits coming in
         for (Long playerId : writeRequest.getPlayerIdList()) {
             Commit commit = new Commit();
             Player player = playerDao.findById(playerId);
-            commit.setPlayer(player);
             commit.setRoster(roster);
+            commit.setPlayer(player);
             roster.addCommit(commit);
         }
-
-        //save all the commits
-        commitDao.saveAllCommits(roster.getCommits()); // todo : will i be ok if save is within loop within transaction?
+        // todo : do i need to explicitly call .saveAllCommits()?
+        commitDao.saveAllCommits(roster.getCommits());
     }
 
     public List<CommitDetail> getAllCommitDetailsByRosterId(Long rosterId) {

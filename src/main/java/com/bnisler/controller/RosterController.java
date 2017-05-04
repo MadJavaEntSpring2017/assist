@@ -46,10 +46,15 @@ public class RosterController {
     }
 
     @RequestMapping(value = "/rosters/{rosterId}/commits", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON)
-    public Long createCommits(@PathVariable ("rosterId") Long rosterId,
+    public List<CommitDetail> createCommits(@PathVariable ("rosterId") Long rosterId,
                               @RequestBody CommitWriteRequest writeRequest) {
+        //todo : wrap these two methods into a single transaction!!!
+        // delete all commits for the roster
+        commitService.deleteRosterCommits(rosterId);
+        // create all commits from write request
         commitService.createRosterCommits(rosterId, writeRequest);
-        return rosterId;
+
+        return commitService.getAllCommitDetailsByRosterId(rosterId);
     }
 
     @RequestMapping(value = "/rosters/{rosterId}/commits", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)

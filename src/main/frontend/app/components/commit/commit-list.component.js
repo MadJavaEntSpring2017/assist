@@ -7,14 +7,15 @@
             controllerAs: 'vm',
             templateUrl: 'components/commit/commit-list.html',
             bindings: {
-                commits: '<'
+                commits: '<',
+                onUpdate: '&'
             },
             require: {}
         });
 
-    CommitListController.$inject = ['$mdDialog', '$stateParams', '$q', 'rosterService'];
+    CommitListController.$inject = ['$mdDialog', '$stateParams', '$q', 'rosterService', 'messageService'];
 
-    function CommitListController($mdDialog, $stateParams, $q, rosterService) {
+    function CommitListController($mdDialog, $stateParams, $q, rosterService, messageService) {
         var vm = this;
 
         vm.showSelectCommitDialog = showSelectCommitDialog;
@@ -36,9 +37,36 @@
                 locals: {
                     roster: vm.roster
                 }
-            }).then(function (results) {
-                console.log(results); //todo delete
+            }).then(function (playerIds) {
+                if (playerIds) {
+                    save(playerIds);
+                }
             });
+        }
+
+        function save(playerIds) {
+            var writeRequest = createWriteRequest(playerIds);
+            rosterService.createCommitsForRoster(vm.roster.id, writeRequest)
+                .then(function (results) {
+                    messageService.showSuccessMessage();
+                    updateCommits(results);
+                }).catch(function () {
+                    messageService.showErrorMessage();
+                });
+        }
+
+        function updateCommits(commits) {
+            vm.onUpdate({
+                $event: {
+                    commits: commits
+                }
+            });
+        }
+
+        function createWriteRequest(playerIds) {
+            return {
+                playerIdList: playerIds
+            }
         }
     }
 })();
