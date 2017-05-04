@@ -1,0 +1,53 @@
+<md-dialog aria-label="select commits">
+    <md-dialog-content>
+        <div layout-padding>
+            <span class="md-headline">Select players for roster</span>
+        </div>
+        <table st-table="displayPlayers"
+               st-safe-src="vm.players"
+               class="table table-striped">
+            <thead>
+            <tr>
+                <th colspan="4">
+                    <input st-search="firstname" class="form-control" placeholder="Search for player..." type="text" />
+                </th>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="player in displayPlayers">
+                <td>{{player.firstname}}</td>
+                <td>{{player.lastname}}</td>
+                <td>{{player.email}}</td>
+                <td>
+                    <md-checkbox ng-checked="player.selected"
+                                 ng-click="vm.toggleSelected(player)"
+                                 aria-label="select player">
+                    </md-checkbox>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4" class="text-center">
+                    <div st-pagination="" st-items-by-page="25" st-displayed-pages="5"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="vm.save()" class="md-raised md-primary">
+            Save
+        </md-button>
+        <md-button ng-click="vm.closeDialog()"
+                   class="md-primary">
+            Close
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

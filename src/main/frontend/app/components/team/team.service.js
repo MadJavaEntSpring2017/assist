@@ -12,8 +12,13 @@
             getAllTeams: getAllTeams,
             getTeam: getTeam,
             createTeam: createTeam,
-            updateTeam: updateTeam
+            updateTeam: updateTeam,
+            getAllPlayersByTeam: getAllPlayersByTeam
         };
+
+        function getAllPlayersByTeam(teamId) {
+            return apiService.get('/teams/' + teamId + '/players');
+        }
 
         function updateTeam(teamId, writeRequest) {
             return apiService.put('/teams/' + teamId, writeRequest);

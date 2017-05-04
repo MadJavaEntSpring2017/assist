@@ -13,8 +13,13 @@
             getRostersBySession: getRostersBySession,
             getRosterDetails: getRosterDetails,
             createRoster: createRoster,
-            updateRoster: updateRoster
+            updateRoster: updateRoster,
+            createCommitsForRoster: createCommitsForRoster
         };
+
+        function createCommitsForRoster(rosterId, writeRequest) {
+            return apiService.post('/rosters/' + rosterId + '/commits', writeRequest);
+        }
 
         function updateRoster(rosterId, writeRequest) {
             return apiService.put('/rosters/' + rosterId, writeRequest);

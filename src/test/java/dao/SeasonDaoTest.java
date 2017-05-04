@@ -21,7 +21,7 @@ public class SeasonDaoTest extends BaseDaoTest {
     @Before
     public void setup() {
         Season season = new Season();
-        season.setName("Fall2014/Spring2015");
+        season.setName("TestSeason");
         season.setActive(true);
         this.season = season;
     }

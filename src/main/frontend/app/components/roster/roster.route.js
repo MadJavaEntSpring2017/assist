@@ -38,9 +38,16 @@
             component: 'roster'
         };
 
+        // var rosterCommitListAddState = {
+        //     name: 'main.roster-commits-add',
+        //     url: '/roster/:rosterId/commits',
+        //     component: 'commitList'
+        // };
+
         $stateProvider
             .state(rosterListState)
             .state(rosterDetailState)
             .state(rosterAddState);
+            // .state(rosterCommitListAddState);
     }
 })();

@@ -1,6 +1,8 @@
 package com.bnisler.controller;
 
 import com.bnisler.entity.Team;
+import com.bnisler.service.player.PlayerDetail;
+import com.bnisler.service.player.PlayerService;
 import com.bnisler.service.roster.RosterDetail;
 import com.bnisler.service.roster.RosterService;
 import com.bnisler.service.team.TeamService;
@@ -19,6 +21,9 @@ public class TeamController {
 
     @Autowired
     private RosterService rosterService;
+
+    @Autowired
+    private PlayerService playerService;
 
     @RequestMapping(value = "/teams", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
     public List<Team> getAllTeams() {
@@ -46,5 +51,10 @@ public class TeamController {
     @RequestMapping(value = "/teams/{teamId}/rosters", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
     public List<RosterDetail> getAllRosterDetailsByTeamId(@PathVariable ("teamId") Long teamId) {
         return rosterService.getAllRosterDetailsByTeamId(teamId);
+    }
+
+    @RequestMapping(value = "/teams/{teamId}/players", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+    public List<PlayerDetail> getAllPlayerDetailsByTeamId(@PathVariable ("teamId") Long teamId) {
+        return playerService.getAllPlayerDetailsByTeamId(teamId);
     }
 }
