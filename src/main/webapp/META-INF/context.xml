@@ -1,11 +1,12 @@
-<Context docBase="assist" path="/assist" reloadable="true">
-    <Realm className="org.apache.catalina.realm.JDBCRealm"
+<!--<Context docBase="assist" path="/assist" reloadable="true">-->
+<Context docBase="assist" path="" reloadable="true">
+<!--<Realm className="org.apache.catalina.realm.JDBCRealm"
            driverName="com.mysql.jdbc.Driver"
            connectionURL="jdbc:mysql://localhost:3306/assist?user=tomcat&amp;password=tomcat"
            userTable="user" userNameCol="username" userCredCol="password"
            userRoleTable="role" roleNameCol="role">
 
-    </Realm>
+    </Realm>-->
     <Resources cachingAllowed="true"
                cacheMaxSize="100000"
     ></Resources>

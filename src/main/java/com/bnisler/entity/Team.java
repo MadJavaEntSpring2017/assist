@@ -50,10 +50,6 @@ public class Team {
         return rosters;
     }
 
-    // TODO: uncomment this when security implemented
-//    @OneToOne(fetch = FetchType.LAZY)
-//    private Manager manager;
-
     @Override
     public String toString() {
         return "Team{" +

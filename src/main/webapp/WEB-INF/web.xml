@@ -4,38 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <!--<security-constraint>-->
-        <!--<web-resource-collection>-->
-            <!--<web-resource-name>assist</web-resource-name>-->
-            <!--<url-pattern>/*</url-pattern>-->
-        <!--</web-resource-collection>-->
-        <!--<auth-constraint>-->
-            <!--<role-name>player</role-name>-->
-            <!--<role-name>team_mgr</role-name>-->
-            <!--<role-name>league_mgr</role-name>-->
-            <!--<role-name>official</role-name>-->
-        <!--</auth-constraint>-->
-    <!--</security-constraint>-->
-
-    <!--<security-role>-->
-        <!--<role-name>player</role-name>-->
-    <!--</security-role>-->
-    <!--<security-role>-->
-        <!--<role-name>team_mgr</role-name>-->
-    <!--</security-role>-->
-    <!--<security-role>-->
-        <!--<role-name>league_mgr</role-name>-->
-    <!--</security-role>-->
-    <!--<security-role>-->
-        <!--<role-name>official</role-name>-->
-    <!--</security-role>-->
-
-    <!--<login-config>-->
-        <!--<auth-method>FORM</auth-method>-->
-        <!--<form-login-config>-->
-            <!--<form-login-page>/login.jsp</form-login-page>-->
-            <!--<form-error-page>/failedLogin.jsp</form-error-page>-->
-        <!--</form-login-config>-->
-    <!--</login-config>-->
+    <welcome-file-list>
+        <welcome-file>/index.html</welcome-file>
+    </welcome-file-list>
 
 </web-app>

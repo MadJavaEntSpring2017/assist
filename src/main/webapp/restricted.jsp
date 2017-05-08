@@ -1,1 +1,0 @@
-<div>THIS IS RESTRICTED CONTENT</div>
