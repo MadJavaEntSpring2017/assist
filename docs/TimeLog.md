@@ -77,4 +77,33 @@
 | 20170323 | Add additional team project methods | 1.25 | |
 | 20170354 | Angular 2 research, practice | 6.5 | |
 | 20170326 | Angular 2 research, practice | 7.5 | |
-| 20170227 | Feedback for presenter, week 10 lecture | 2.0 | |
+| 20170327 | Feedback for presenter, week 10 lecture | 2.0 | |
+| 20170329 | Cave of Programming Tutorial, Wk10 Exercise | 3.5 | |
+| 20170401 | Research Google Calendar API | 11.0 | |
+| 20170402 | More research on Google Calendar API | 2.0 | |
+| 20170404 | More Google Calendar : obtain credentials, add CalendarService, controller | 4.5 | |
+| 20170406 | Team project - presentation prep work, final code work, error handling | 2.5 | |
+| 20170407 | AngularJS integration research, get AngularJS initialized | 5.0 | |
+| 20170409 | More AngularJS integration, move frontend application to different location | 2.5 | |
+| 20170410 | Update error handling, first attempt at adding AngularJS frontend to project, look into 'Angular-Kickstart' | 2.75 | |
+| 20170413 | Class survey, Week 13 Act/Ex/Videos | 3.25 | |
+| 20170414 | Research Angular-Kickstart, didn't like it. Will use Angular-Seed for project init | 1.75 | |
+| 20170416 | Implement frontend rest service ($http), add CORSFilter, implement league feature | 6.0 | |
+| 20170417 | Incorporate Material Design into frontend | 3.0 | |
+| 20170420 | Push week13 exercise, request project reviewer, give presentation feedbacks, update manager data (take out data), incorporate player feature : DAO, service, controller, mapper, test, details, write request | 5.0 | |
+| 20170421 | Frontend for player CRUD, incorporate 'smart-table', bootstrap, component routing | 12.5 | |
+| 20170422 | Design formatting, configure date representation, add frontend message service, add team feature : tests, dao, service controller, mapper | 7.0 | |
+| 20170424 | Refactor id types, refactor player details, start on league and divisions | 7.75 | |
+| 20170426 | Presentation feedbacks, code review for Mike | 2.25 | |
+| 20170427 | Begin on session feature : backend season, session, split entities, daos, tests, services, controllers, mappers, details, write requests | 4.75 | |
+| 20170428 | Finish backend session feature | 2.25 | |
+| 20170430 | Work on split feature backend, refactor frontend api service calls to be more abstract, refactor session API | 8.25 | |
+| 20170501 | Session frontend, refactor session/season/split, season frontend list/add/update, create select components | 9.25 | |
+| 20170502 | Create roster feature, begin work on commit feature | 7.25 | |
+| 20170503 | Refactor some backend for roster, create frontend for roster, begin work on adding several commits to a team's roster | 15.5 | |
+| 20170504 | Refactor creating a commit, bug fix in select components | 4.25 | |
+| 20170504 | Spring security research | 10.5 | |
+| 20170505 | More security... and even more security... not getting anywhere :-/   move on to other things | 14.0 | |
+| 20170507 | Calendar API research, install node/npm on remote server, think about how to deploy application | 4.0 | |
+| 20170508 | Work on deploying application... even though it doesn't have security. take out some data from database | 8.5 | |
+| 20170508 | Update time log | 1.0 | |
