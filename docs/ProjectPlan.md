@@ -42,42 +42,47 @@
  - [ ] Plan out necessary services
 
 ### Week 7
- - [ ] Time log
- - [ ] Add necessary unit tests
- - [ ] Add authorization, authentication (maybe via Spring)
- - [ ] Add JAX-RS
+ - [X] Time log
+ - [X] Add necessary unit tests
+ - [X] Add authorization, authentication
+ - [X] Add JAX-RS
 
 ### Week 8
- - [ ] Time log
- - [ ] Add necessary unit tests
- - [ ] Implement RESTful services
- - [ ] Add Bower
- - [ ] Add AngularJS, Bootstrap
+ - [X] Time log
+ - [X] Add necessary unit tests
+ - [X] Implement RESTful services
+ - [X] Add Bower
+ - [X] Add AngularJS, Bootstrap
 
 ### Week 9
- - [ ] Time log
- - [ ] Add necessary unit tests
+ - [X] Time log
+ - [X] Add necessary unit tests
 
 ### Week 10
- - [ ] Time log
- - [ ] Add necessary unit tests
+ - [X] Time log
+ - [X] Add necessary unit tests
 
 ### Week 11
- - [ ] Time log
- - [ ] Add necessary unit tests
+ - [X] Time log
+ - [X] Add necessary unit tests
 
 ### Week 12
- - [ ] Time log
- - [ ] Add necessary unit tests
+ - [X] Time log
+ - [X] Add necessary unit tests
 
 ### Week 13
- - [ ] Time log 
- - [ ] Add necessary unit tests
+ - [X] Time log 
+ - [X] Add necessary unit tests
 
 ### Week 14
- - [ ] Time log
- - [ ] Add necessary unit tests
+ - [X] Time log
+ - [X] Add necessary unit tests
+ - [X] Incorporate new features (backend/frontend)
+ - [ ] Add Google Calendar API
+ - [ ] Incorporate Spring Security
 
 ### Week 15
- - [ ] Time log
- - [ ] Add necessary unit tests
+ - [X] Time log
+ - [X] Add necessary unit tests
+ - [X] Incorporate new features (backend/frontend)
+ - [X] Reconfigure project for deployment

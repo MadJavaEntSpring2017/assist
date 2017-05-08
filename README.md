@@ -16,16 +16,15 @@ Establishing a central location for players and managers to check in will keep e
   * User roles: Players, Managers, Officials
 * Database (MySQL + Hibernate)
   * Store users and roles
-  * Store player, manager, team, match information
-* Spring Framework (Data, WebMVC)
+  * Store player, manager, team, roster, match information
+* Spring Framework (Rest, Web, MVC)
 * AngularJS Framework (Material Design) utilizing component architecture as my independent research topic
 * Incorporate Google Calendar API
 * Logging
   * Configure log4j to allow error logging in production, but debug logging for development.
 * Application and Database hosted on AWS
 * Unit Testing
-  * Test repository calls to the database
-  * Test methods other than getters/setters
+  * Test DAO calls to the database
 
 ### Design
 
