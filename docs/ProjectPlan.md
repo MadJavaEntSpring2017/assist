@@ -86,3 +86,4 @@
  - [X] Add necessary unit tests
  - [X] Incorporate new features (backend/frontend)
  - [X] Reconfigure project for deployment
+ - [X] Incorporate Spring Security

@@ -107,3 +107,4 @@
 | 20170507 | Calendar API research, install node/npm on remote server, think about how to deploy application | 4.0 | |
 | 20170508 | Work on deploying application... even though it doesn't have security. take out some data from database | 8.5 | |
 | 20170508 | Update time log | 1.0 | |
+| 20170509 | Try security one more time... and it worked! Update DB and redeploy to AWS, work on presentation | 6.0 | |
