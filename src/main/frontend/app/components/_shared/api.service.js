@@ -7,8 +7,8 @@
     apiService.$inject = ['$q', '$http'];
 
     function apiService($q, $http) {
-        // var BASE_URI = 'http://13.58.92.16:8080/assist';
-        var BASE_URI = 'http://localhost:8080/assist';
+        var BASE_URI = 'http://13.58.92.16:8080/assist';
+        // var BASE_URI = 'http://localhost:8080/assist';
         var REST_SERVICE_URI;
 
         return {
