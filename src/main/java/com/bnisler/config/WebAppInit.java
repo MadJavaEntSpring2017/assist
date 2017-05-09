@@ -4,13 +4,10 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import javax.servlet.Filter;
 
-/**
- * Created by Ben on 2/11/2017.
- */
 public class WebAppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{RootConfig.class, DataConfig.class};
+        return new Class<?>[]{RootConfig.class, DataConfig.class, WebSecurityConfig.class};
     }
 
     @Override

@@ -16,16 +16,17 @@
         <mockito-all-version>1.10.19</mockito-all-version>
 
         <!-- Spring -->
-        <spring-test-version>4.3.2.RELEASE</spring-test-version>
-        <spring-web-version>4.3.2.RELEASE</spring-web-version>
-        <spring-webmvc-version>4.3.2.RELEASE</spring-webmvc-version>
-        <spring-orm-version>4.3.2.RELEASE</spring-orm-version>
-        <spring-context-version>4.3.2.RELEASE</spring-context-version>
-        <spring-context-support-version>4.3.2.RELEASE</spring-context-support-version>
-        <spring-jdbc-version>4.3.2.RELEASE</spring-jdbc-version>
-        <spring-tx-version>4.3.2.RELEASE</spring-tx-version>
+        <spring-test-version>4.3.5.RELEASE</spring-test-version>
+        <spring-web-version>4.3.5.RELEASE</spring-web-version>
+        <spring-webmvc-version>4.3.5.RELEASE</spring-webmvc-version>
+        <spring-orm-version>4.3.5.RELEASE</spring-orm-version>
+        <spring-context-version>4.3.5.RELEASE</spring-context-version>
+        <spring-context-support-version>4.3.5.RELEASE</spring-context-support-version>
+        <spring-jdbc-version>4.3.5.RELEASE</spring-jdbc-version>
+        <spring-tx-version>4.3.5.RELEASE</spring-tx-version>
         <spring-security-web-version>4.2.1.RELEASE</spring-security-web-version>
         <spring-security-config-version>4.2.1.RELEASE</spring-security-config-version>
+        <spring-security-core-version>4.2.1.RELEASE</spring-security-core-version>
 
         <!-- Jackson -->
         <jackson-core-version>2.7.8</jackson-core-version>
@@ -129,6 +130,12 @@
             <artifactId>spring-security-config</artifactId>
             <version>${spring-security-config-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring-security-core-version}</version>
+        </dependency>
+
 
         <!-- Java/JSON -->
         <dependency>
