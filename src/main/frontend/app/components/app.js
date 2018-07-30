@@ -25,6 +25,7 @@
         // $locationProvider.hashPrefix('!');
         // $routeProvider.otherwise({redirectTo: '/view1'});
         // $urlRouterProvider.otherwise('/view1');
+        // TODO: remove
 
         $urlRouterProvider.otherwise('/home');
 
